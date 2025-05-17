@@ -39,6 +39,9 @@ input:focus {
   outline: none;
 }
 
+textarea:focus {
+  outline: none;
+}
 
 .header {
   display: flex;
@@ -225,19 +228,19 @@ input:focus {
 
 #menu_styling,
 #menu_styling-mobile {
-  background-image: url(/img/menu-styling.jpg);
+  background-image: url(../img/menu-styling.jpg);
 }
 
 #menu_hair {
-  background-image: url(/img/menu-hair.jpg);
+  background-image: url(../img/menu-hair.jpg);
 }
 
 #menu_nail {
-  background-image: url(/img/menu-nail.jpg);
+  background-image: url(../img/menu-nail.jpg);
 }
 
 #menu_brow {
-  background-image: url(/img/menu-brow.jpg);
+  background-image: url(../img/menu-brow.jpg);
 }
 
 .menu-btn-services_mobile {
@@ -320,7 +323,7 @@ input:focus {
   margin-bottom: 6px;
 }
 .main-image {
-  background-image: url(img/mask-group.jpg);
+  background-image: url(../img/mask-group.jpg);
   background-size: cover;
   display: flex;
   justify-content: end;
@@ -1580,7 +1583,7 @@ footer {
 .leave-a-review {
   display: flex;
   flex-direction: column;
-  background-image: url(img/reviews-bcg.jpg);
+  background-image: url(../img/reviews-bcg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 49px 0;
@@ -2128,7 +2131,7 @@ footer {
 
 .vacancy-main-img {
   height: 400px;
-  background-image: url(img/vacancy-main-img.jpg);
+  background-image: url(../img/vacancy-main-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 55px;
@@ -2757,7 +2760,7 @@ footer {
 /* Главная страница */
 .main-banner {
   position: relative;
-  background-image: url("img/brian-lawson.jpg");
+  background-image: url("../img/brian-lawson.jpg");
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -3258,7 +3261,7 @@ footer {
 /**************** НОВЫЙ ПРАЙС **************************/
 
 .price-main-image {
-  background-image: url(img/price-main-img.jpg);
+  background-image: url(../img/price-main-img.jpg);
   margin-bottom: 57px;
 }
 
@@ -3325,6 +3328,8 @@ footer {
 
 .price-body {
   margin-bottom: 150px;
+  transition: opacity 0.3s ease;
+  opacity: 1; /* Начальное значение */
 }
 .price-body_item {
   display: flex;
@@ -3430,7 +3435,7 @@ tbody tr td {
 .grey-thead tr th:nth-child(2) {
   display: flex;
   width: 100%;
-  padding-top: 17px;
+  padding-top: 27px;
 }
 
 .grey-tbody {
@@ -3527,6 +3532,7 @@ tbody tr td {
   text-align: start;
   padding: 26px 0 26px 16px;
   width: 50%;
+  font-weight: 600;
 }
 
 .price-table_mobile td:nth-child(2) {
@@ -3660,14 +3666,6 @@ tbody tr td {
   letter-spacing: 1.02px;
   text-transform: uppercase;
   margin-left: 19px;
-}
-
-.price-navigation {
-  display: none;
-}
-
-.price-navigation-desktop {
-  display: flex;
 }
 
 @media screen and (max-width: 1250px) {
@@ -4205,7 +4203,7 @@ tbody tr td {
 /******************* Сертификаты *************************/
 
 .certificate-main-image {
-  background-image: url(img/certificate-main-image.jpg);
+  background-image: url(../img/certificate-main-image.jpg);
 }
 
 .certificate-upper-section {
@@ -4326,13 +4324,13 @@ tbody tr td {
 }
 
 .certificate-1000_img {
-  background-image: url(img/sert1000.jpg);
+  background-image: url(../img/sert1000.jpg);
 }
 .certificate-1500_img {
-  background-image: url(img/sert1500.jpg);
+  background-image: url(../img/sert1500.jpg);
 }
 .certificate-2000_img {
-  background-image: url(img/sert2000.jpg);
+  background-image: url(../img/sert2000.jpg);
 }
 
 .certificate-grid_item_body {
@@ -5044,4 +5042,38 @@ tbody tr td {
 
 .about-link:hover {
   color: #dd3c49;
+}
+
+/******************/
+
+/* Общие стили для всех стрелок */
+.nav-arrow {
+  display: inline-block;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg); /* смотрит вниз */
+}
+
+.price-navigation_item:not(.price-navigation_item_active) .nav-arrow {
+  display: none;
+}
+
+.price-navigation_item_active.dropdown-open > .nav-arrow {
+  transform: rotate(180deg);
+}
+
+/**/
+
+@media screen and (max-width: 900px) {
+  .price-navigation {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price-navigation_item {
+    order: 0; /* обычные пункты */
+  }
+
+  .price-navigation_item_active {
+    order: -1; /* активный пункт всегда поверх */
+  }
 }
