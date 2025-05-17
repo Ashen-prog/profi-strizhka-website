@@ -1,0 +1,5076 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: #000;
+}
+
+main {
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.content {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+input:focus {
+  outline: none;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.header_logo-container {
+  margin-right: 86px;
+  cursor: pointer;
+  position: relative;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Бургер (старый)*/
+
+/* .burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 4px 0;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.burger-menu span {
+  height: 3px;
+  width: 26px;
+  background: #333;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.burger-menu.open span:nth-child(1) {
+  transform: rotate(55deg);
+  transform-origin: 0 0;
+}
+
+.burger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open span:nth-child(3) {
+  transform: rotate(-55deg);
+  transform-origin: 0 100%;
+} */
+
+/**/
+
+.menu {
+  width: 657px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 113px;
+  list-style: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: all 0.3s ease;
+}
+
+#menu-li-active,
+#menu-li-mobile-active {
+  color: #ed4b58;
+}
+
+.menu-btn-services {
+  cursor: pointer;
+}
+
+/* Выпадашка в меню */
+
+.menu-services-dropdown,
+.services-mobile {
+  display: flex;
+  max-width: 1170px;
+  justify-content: space-around;
+  border: 1px solid #3a383b;
+  align-items: center;
+  position: relative;
+  bottom: 31px;
+  opacity: 0; /* Прозрачные по умолчанию */
+  height: 0; /* Высота 0 по умолчанию */
+  overflow: hidden; /* Скрываем содержимое */
+  transition: all 0.5s ease; /* Плавное изменение */
+}
+
+.menu-services-dropdown.show {
+  height: 368px;
+  opacity: 1;
+}
+
+.menu-services-dropdown_item_container {
+  opacity: 0.7;
+  background-color: #3a383b;
+}
+
+.menu-services-dropdown_item_container:hover {
+  opacity: 0.9;
+}
+
+.menu-services-dropdown_item {
+  width: 270px;
+  height: 311px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu-services-dropdown_logo {
+  margin-bottom: 61px;
+}
+
+.menu-services-dropdown_title {
+  color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 136.842% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  z-index: 100;
+}
+
+.menu-services-dropdown_text {
+  color: #cac6bf;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 12px; /* 92.308% */
+  max-width: 127px;
+  margin-bottom: 43px;
+  z-index: 100;
+}
+
+.menu-services-dropdown_btn {
+  color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  background: none;
+  border: 1px solid #fff;
+  padding: 12px 16px 11px 14px;
+  text-transform: uppercase;
+  width: 164px;
+  height: 46px;
+  flex-shrink: 0;
+  margin-bottom: 33px;
+}
+
+.menu-btn-services img {
+  transition: transform 0.3s ease;
+}
+
+.rotated {
+  transform: rotate(-180deg);
+}
+
+#menu_styling,
+#menu_styling-mobile {
+  background-image: url(/img/menu-styling.jpg);
+}
+
+#menu_hair {
+  background-image: url(/img/menu-hair.jpg);
+}
+
+#menu_nail {
+  background-image: url(/img/menu-nail.jpg);
+}
+
+#menu_brow {
+  background-image: url(/img/menu-brow.jpg);
+}
+
+.menu-btn-services_mobile {
+  display: none;
+}
+
+.menu-btn-services {
+  display: block;
+}
+
+/********************************/
+
+.sign-btn {
+  width: 200px;
+  height: 52px;
+  flex-shrink: 0;
+  background-color: #ed4b58;
+  color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.02px;
+}
+
+.sign-btn:hover {
+  background-color: #dd3c49;
+}
+.back-btn {
+  color: #b4babf;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 133.333% */
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.back-btn img {
+  margin-right: 8px;
+}
+
+.back-mobile {
+  display: none;
+}
+
+.under-header {
+  display: none;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.under-header_online-registration-btn {
+  background-color: #fff;
+  color: #ed4b58;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ed4b58;
+}
+
+.h1 {
+  /* max-width: 380px; */
+  color: #222;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44px; /* 110% */
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.main-image {
+  background-image: url(img/mask-group.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: end;
+  height: 400px;
+  margin-bottom: 49px;
+  width: 100vw;
+}
+
+.vector-container {
+  width: 1100px;
+  height: 37px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+  position: relative;
+  top: -59px;
+  z-index: 1000;
+}
+
+.vector {
+  position: relative;
+  width: 124px;
+  height: 124px;
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.social-networks_under-header img {
+  width: 26px;
+  margin-right: 10px;
+}
+
+/******************/
+
+.documents {
+  display: flex;
+  margin-bottom: 123px;
+}
+.documents_left-menu {
+  width: 35%;
+}
+
+.documents-arrow-mobile {
+  display: none;
+}
+.documents_left-menu_ul {
+  list-style: none;
+  color: #000;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 152.941% */
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.documents_left-menu_ul li {
+  width: fit-content;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.documents_left-menu_acive {
+  background-color: #fcbcae;
+}
+.documents_right-side {
+  width: 65%;
+}
+.documents_right-side_text h2 {
+  color: #222;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 39px; /* 144.444% */
+  letter-spacing: 0.81px;
+  text-transform: uppercase;
+  margin-bottom: 34px;
+}
+
+.documents_h2-mobile {
+  display: none;
+}
+
+.documents_right-side_text {
+  display: none;
+  color: #222;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px; /* 152.941% */
+  max-width: 670px;
+}
+
+.documents_right-side_text_active {
+  display: block;
+}
+
+.documents_right-side_text ul {
+  list-style: none;
+}
+
+.documents_right-side_text a {
+  color: #222;
+}
+
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  padding-bottom: 24px;
+}
+
+.breadcrumb-item a {
+  color: #9c9b9d;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 133.333% */
+}
+
+/****/
+
+/* footer */
+
+footer {
+  display: block;
+}
+
+.top-footer {
+  background-color: #f5f5f5;
+  flex-shrink: 0;
+}
+
+.top-footer-content {
+  display: flex;
+  height: 64px;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-footer_nav {
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.top-footer_nav-ul {
+  list-style: none;
+  width: 658px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-footer_nav-ul li a {
+  color: #000;
+}
+
+.footer_online-registration-btn {
+  color: #ed4b58;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ed4b58;
+}
+
+.footer_online-registration-btn:hover {
+  color: #ef9a1b;
+  border-color: #ef9a1b;
+}
+
+.footer_online-registration-btn_mobile {
+  display: none;
+}
+
+.middle-footer {
+  background-color: #494949;
+  color: #cac6bf;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px; /* 100% */
+}
+
+.middle-footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
+  padding-bottom: 47px;
+}
+.middle-footer-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.middle-footer-flex-item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 101px;
+  width: 200px;
+}
+
+.middle-footer-flex-item:last-child {
+  margin-right: 0;
+}
+
+.footer-logo {
+  width: 114.038px;
+  height: 44px;
+  flex-shrink: 0;
+  margin-bottom: 15px;
+}
+.copyright {
+  font-size: 14px;
+  line-height: 22px; /* 157.143% */
+  width: 220px;
+  margin-bottom: 42px;
+}
+.site-doument-link {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+}
+
+/**/
+.middle-footer-flex-item_nav-tilte {
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 17px; /* 100% */
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.middle-footer-flex-item_nav-services {
+  list-style: none;
+}
+
+.middle-footer-flex-item_nav-services li {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.middle-footer-flex-item_nav-services li:last-child {
+  margin-bottom: 0;
+}
+
+.middle-footer-flex-item_nav-services li a {
+  color: #fff;
+}
+
+.middle-footer-flex-item_nav-services img {
+  margin-right: 4.71px;
+}
+
+/**/
+
+.middle-footer-flex-item_nav-salons {
+  list-style: none;
+}
+
+.middle-footer-flex-item_nav-salons li {
+  margin-bottom: 18px;
+}
+
+.middle-footer-flex-item_nav-salons li:last-child {
+  margin-bottom: 0;
+}
+
+.middle-footer-flex-item_nav-salons li a {
+  color: #fff;
+}
+
+/**/
+.middle-footer-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.middle-footer-contacts a {
+  color: #cac6bf;
+  font-weight: 400;
+}
+.footer_tel {
+  font-size: 21px;
+  line-height: 22px; /* 104.762% */
+  margin-bottom: 19px;
+}
+.footer_email {
+  font-size: 17px;
+  line-height: 17px; /* 100% */
+  margin-bottom: 67px;
+}
+.footer_social-networks {
+  display: flex;
+  width: 148px;
+  justify-content: space-between;
+}
+
+.footer_social-networks img {
+  width: 36px;
+  cursor: pointer;
+}
+
+.lower-footer {
+  display: flex;
+  height: 96px;
+  justify-content: space-between;
+  align-items: center;
+  color: #3a383b;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+}
+.footer_payments {
+  margin-right: 128px;
+}
+
+.lower-footer_cookies {
+  max-width: 270px;
+}
+.legal-notice {
+  max-width: 570px;
+}
+
+.middle-footer_mobile {
+  display: none;
+}
+
+/*Адаптивность*/
+
+@media screen and (max-width: 1250px) {
+  .content {
+    width: 1000px;
+    margin: auto;
+  }
+
+  .lower-footer {
+    height: 75px;
+    font-size: 7px;
+    line-height: 13px;
+  }
+
+  .vector-container {
+    right: 70px;
+  }
+
+  .menu-services-dropdown_item {
+    width: 200px;
+  }
+
+  .menu-services-dropdown_title {
+    font-size: 17px;
+  }
+
+  .header_logo-container {
+    margin-right: 30px;
+  }
+
+  .menu {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .content {
+    width: 950px;
+    margin: auto;
+  }
+
+  .menu {
+    font-size: 15px;
+  }
+
+  .main-image {
+    background-size: contain; /* Фон подгоняется под размер блока */
+    background-repeat: no-repeat; /* Избегаем повторения фона */
+    background-position: center; /* Центрируем изображение */
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+
+  .sign-btn {
+    width: 150px;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .footer_tel {
+    font-size: 17px;
+  }
+
+  .footer_email {
+    font-size: 15px;
+  }
+
+  .vector-container {
+    height: 0;
+    top: -37px;
+    right: 110px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .content {
+    width: 900px;
+    margin: auto;
+  }
+
+  .vector-container {
+    right: 150px;
+  }
+
+  .middle-footer-flex-item {
+    margin-right: 60px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .vector-container {
+    right: 200px;
+  }
+
+  .header_logo-container {
+    margin-right: 35px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .content {
+    width: 850px;
+    margin: auto;
+  }
+
+  .sign-btn {
+    display: none;
+  }
+
+  .under-header {
+    display: flex;
+  }
+
+  .menu {
+    margin-right: 0;
+  }
+
+  .vector-container {
+    right: 250px;
+    top: -105px;
+  }
+
+  .header {
+    padding-bottom: 20px;
+    border-bottom: #e9ebed solid 1px;
+    margin-bottom: 35px;
+  }
+
+  .back-btn {
+    display: none;
+  }
+  .back-mobile {
+    display: flex;
+  }
+
+  .h1 {
+    margin-bottom: 14px;
+  }
+
+  .middle-footer-flex-item {
+    margin-right: 50px;
+  }
+
+  .documents_left-menu_ul {
+    height: 150px;
+    font-size: 15px;
+  }
+
+  .documents_right-side_text {
+    font-size: 15px;
+  }
+
+  .documents_right-side_text h2 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    width: 600px;
+    margin: auto;
+  }
+
+  .menu {
+    font-size: 11px;
+  }
+
+  .vector-container {
+    right: 350px;
+  }
+
+  .header_logo-container {
+    margin-right: 50px;
+  }
+
+  .top-footer_nav {
+    display: none;
+  }
+
+  .footer_online-registration-btn {
+    display: none;
+  }
+
+  .top-footer-content {
+    justify-content: center;
+    height: 112px;
+  }
+
+  /*Мобильный футер*/
+
+  .footer_online-registration-btn_mobile {
+    width: 200px;
+    height: 52px;
+    color: #fff;
+    background-color: #ed4b58;
+    font-family: "Ysabeau SC", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  .middle-footer {
+    display: none;
+  }
+
+  .lower-footer img {
+    display: none;
+  }
+
+  .lower-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 40px;
+  }
+
+  .lower-footer_cookies {
+    max-width: fit-content;
+  }
+
+  .legal-notice {
+    max-width: fit-content;
+  }
+
+  .middle-footer_mobile {
+    display: flex;
+    background-color: #494949;
+  }
+
+  .middle-footer_mobile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #494949;
+  }
+
+  .logo-and-social-networks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 36px;
+    margin-bottom: 32px;
+  }
+
+  .footer-logo {
+    margin-bottom: 0;
+  }
+
+  .footer_social-networks {
+    width: 148px;
+  }
+
+  .footer_social-networks img {
+    width: 36px;
+    margin-right: 15px;
+  }
+
+  .footer_tel {
+    color: #cac6bf;
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+  .footer_email {
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 31px;
+  }
+  .footer-nav_mobile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 28px;
+    font-size: 15px;
+  }
+
+  .middle-footer-flex-item_nav-tilte {
+    color: #cac6bf;
+  }
+  .copyright {
+    color: #cac6bf;
+    margin-bottom: 20px;
+  }
+
+  .footer_payments-mobile {
+    height: 16px;
+    margin: 28px 0;
+  }
+
+  .menu-services-dropdown_item {
+    width: 120px;
+    height: 180px;
+  }
+
+  .menu-services-dropdown_title {
+    font-size: 9px;
+    line-height: 10px;
+  }
+
+  .menu-services-dropdown_text {
+    font-size: 7px;
+  }
+
+  .menu-services-dropdown_btn {
+    padding-top: 3px;
+    font-size: 12px;
+    width: 109px;
+    height: 24px;
+  }
+
+  .menu-services-dropdown_logo {
+    display: none;
+  }
+
+  .menu-services-dropdown.show {
+    height: 220px;
+  }
+
+  /** Мобилбная версия для Документов **/
+
+  .main-image {
+    height: 190px;
+    background-size: 150%;
+    margin-bottom: 32px;
+    background-position: 25%;
+  }
+
+  .documents {
+    width: 200%;
+    height: 334px;
+  }
+
+  .documents_h2 {
+    display: none;
+  }
+
+  .documents_h2-mobile {
+    display: block;
+  }
+
+  .documents-arrow-mobile {
+    display: inline;
+    rotate: 180deg;
+    position: relative;
+    top: 3.5px;
+  }
+
+  .documents_right-side {
+    width: 100%;
+    position: relative;
+    left: 100%;
+    transition: all 1s ease-in-out;
+    background-color: #fff;
+  }
+
+  .documents_left-menu {
+    width: 100%;
+  }
+
+  .documents_left-menu_ul {
+    font-size: 17px;
+  }
+
+  .documents_left-menu_ul li {
+    padding-bottom: 16px;
+    border-bottom: #e9ebed solid 1px;
+    margin-bottom: 16px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .documents_left-menu_acive {
+    background-color: #fff;
+  }
+
+  .documents_right-side_text h2 {
+    font-size: 17px;
+    text-transform: none;
+  }
+
+  .documents_h2-mobile img {
+    margin-right: 12px;
+    position: relative;
+    top: 3px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .vector-container {
+    display: none;
+  }
+
+  .sign-btn {
+    display: none;
+  }
+
+  /* .menu {
+    position: fixed;
+    top: 85px;
+    right: -20px;
+    width: 80%; 
+    max-width: 300px; 
+    height: 350px;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    opacity: 1;
+    z-index: 999; 
+    font-size: 20px;
+  }
+
+  .menu.active {
+    transform: translateX(0);
+  }
+
+  .burger-menu {
+    display: flex;
+    z-index: 1000;
+  }
+
+  .menu.active li {
+    margin: 7px 0;
+    text-align: center;
+  } */
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  /* Кнопка гамбургера */
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .menu-toggle__line {
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .menu-toggle.active .menu-toggle__line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .menu-toggle.active .menu-toggle__line:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .menu-toggle__line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  /* Оверлей */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+  .overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Меню */
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Вместо align-items: center; можно использовать выравнивание по левому краю */
+    align-items: flex-start;
+    padding: 40px 20px; /* слева/справа чуть меньше, чтобы текст был не по центру */
+    background: #fafafa; /* слегка светло-серый фон для мягкого контраста */
+  }
+
+  .menu.active {
+    transform: translateX(0);
+  }
+
+  .menu li {
+    font-size: 28px;
+    line-height: 1.5;
+    list-style: none;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px dashed #222;
+    color: #222;
+    font-weight: 500;
+  }
+
+  .menu li:first-child {
+    border-bottom: none;
+  }
+  .menu li:last-child {
+    border-bottom: none;
+  }
+
+  .menu li a {
+    color: inherit;
+  }
+
+  /**/
+
+  .h1 {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px; /* 100% */
+    letter-spacing: 0.75px;
+  }
+
+  .menu-btn-services_mobile {
+    display: block;
+  }
+
+  .menu-btn-services {
+    display: none;
+  }
+  .breadcrumb-item a {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    width: 380px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .content {
+    width: 328px;
+    margin: auto;
+  }
+}
+
+/******************************** БЛОГ *********************************/
+
+.filter_blog-section {
+  margin-bottom: 42px;
+}
+
+.filter_blog-section-btn {
+  margin-right: 31px;
+  cursor: pointer;
+  color: #9c9b9d;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px; /* 73.684% */
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  background-color: #fff;
+}
+
+.filter_blog-section-btn.active {
+  color: #3a383b;
+}
+
+.grid_blog-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 104px;
+}
+
+.grid-item_blog-section {
+  padding: 10px;
+}
+
+.grid-item_blog-section img {
+  width: 100%;
+  height: auto;
+}
+
+.grid-item_blog-section h3 {
+  margin-top: 13px;
+  margin-bottom: 5px;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 136.842% */
+}
+
+.grid-link_blog-section {
+  text-decoration: none;
+  color: inherit;
+}
+
+.grid-link_blog-section:hover {
+  opacity: 0.8;
+}
+
+.read-btn_blog-section {
+  padding: 10px 0;
+  cursor: pointer;
+  color: #ed4b58;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 17px; /* 100% */
+  letter-spacing: 1.02px;
+  background-color: #fff;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+#show-more-btn_blog-section {
+  width: 300px;
+  height: 52px;
+  flex-shrink: 0;
+  border: 1px solid #3a383b;
+  color: #3a383b;
+  background-color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  display: block;
+  margin: 0px auto 121px auto;
+}
+
+#show-more-btn_blog-section:hover {
+  background-color: #fc7c77;
+}
+
+/***/
+
+@media screen and (max-width: 768px) {
+  .grid_blog-section {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 34px;
+  }
+
+  .filter_blog-section-btn {
+    margin-right: 19px;
+    font-size: 16px;
+  }
+
+  .filter_blog-section-btn.active {
+    color: #3a383b;
+    padding-bottom: 5px;
+    border-bottom: #ed4b58 solid 1px;
+  }
+}
+
+/********************************* ГАЛЕРЕЯ ****************/
+
+.gallery-preamble {
+  max-width: 770px;
+  color: #222;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 152.941% */
+  margin-bottom: 49px;
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+}
+.filter_gallery-section {
+  display: flex;
+}
+.filter_gallery-section-btn {
+  background-color: #fff;
+  color: #9c9b9d;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px; /* 73.684% */
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-right: 36px;
+  margin-bottom: 55px;
+}
+.filter_gallery-section-btn.active {
+  color: #3a383b;
+}
+.grid_gallery-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 67px;
+  gap: 41px;
+}
+
+.grid-item_gallery-section {
+  cursor: pointer;
+}
+
+.grid-item_gallery-section img {
+  max-width: 362px;
+  max-height: 437px;
+}
+
+.gallery-filter-mobile-arrow {
+  display: none;
+}
+
+#show-more-btn_gallery-section {
+  width: 300px;
+  height: 52px;
+  flex-shrink: 0;
+  border: 1px solid #3a383b;
+  color: #3a383b;
+  background-color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  display: block;
+  margin: 0px auto 121px auto;
+}
+
+#show-more-btn_gallery-section:hover {
+  background-color: #fc7c77;
+}
+
+.gallery-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(58, 56, 59, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-modal img {
+  max-width: 768px;
+  max-height: 1024px;
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 52px;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 30px;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .grid_gallery-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter_gallery-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .filter_gallery-section-btn {
+    background-color: #fff;
+    color: #9c9b9d;
+    font-family: "Ysabeau SC", sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 14px; /* 73.684% */
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-right: 40px;
+    margin-bottom: 55px;
+  }
+
+  .filter_gallery-section-btn.active {
+    color: #3a383b;
+  }
+
+  .filter_gallery-section {
+    display: block;
+    position: relative;
+  }
+
+  .filter_gallery-section-btn {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    color: #9c9b9d;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+  }
+
+  .filter_gallery-section-btn.active {
+    display: flex;
+    color: #3a383b;
+    cursor: pointer;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gallery-filter-mobile-arrow {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    color: #9c9b9d;
+    transition: transform 0.3s ease-out, color 0.3s ease-out;
+    margin-left: auto;
+  }
+
+  .gallery-filter-mobile-arrow.active {
+    transform: rotate(90deg);
+    color: #3a383b;
+  }
+
+  .filter_gallery-section.open .filter_gallery-section-btn {
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gallery-modal {
+    flex-direction: column;
+  }
+
+  .close-modal {
+    font-size: 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid_gallery-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-modal img {
+    max-width: 400px;
+    max-height: 600px;
+  }
+}
+
+/**************************** Отзывы ******************************/
+
+.leave-a-review {
+  display: flex;
+  flex-direction: column;
+  background-image: url(img/reviews-bcg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 49px 0;
+  margin-bottom: 65px;
+}
+.leave-a-review_title {
+  max-width: 390px;
+  color: #fff;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 31px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 41px; /* 132.258% */
+  letter-spacing: 0.93px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.leave-a-review_text {
+  max-width: 468px;
+  color: #fc7c77;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 152.941% */
+  margin-bottom: 76px;
+}
+.leave-a-review_btn {
+  width: 300px;
+  height: 52px;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid #fff;
+}
+
+/**/
+
+.filter_reviews-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 76px;
+}
+
+.filter_reviews-section-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  width: 270px;
+  height: 96px;
+  border: 1px solid #eeefec;
+}
+
+.filter_reviews-section-btn.active {
+  border-color: #3a383b;
+}
+
+.filter_reviews-section-btn_text {
+  width: 150px;
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px; /* 121.053% */
+  letter-spacing: 5px;
+  text-align: start;
+  padding-left: 15px;
+  text-transform: uppercase;
+}
+
+/*grid*/
+
+.grid_reviews-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 92px;
+  margin-bottom: 50px;
+  padding-left: 36px;
+}
+
+/*item*/
+.grid-item_reviews-section {
+  display: flex;
+  flex-direction: column;
+  width: 499px;
+  font-family: "Manrope", sans-serif;
+  background: #fbfbfb;
+  padding: 32px 35px 28px 36px;
+}
+.review-item-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.review-item-author {
+  color: #26364b;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px; /* 138.889% */
+}
+
+.review-item-body {
+  color: #515e6f;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  margin-bottom: 24px;
+}
+.review-item-source {
+  color: #6e819a;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+
+.review-item-source a {
+  color: #314df6;
+}
+
+.review-item-resource img {
+  width: 50px;
+}
+
+.filter_reviews-section_mobile {
+  display: none;
+}
+
+/** Модалка в отзывах **/
+
+.reviews-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(58, 56, 59, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews-modal_window {
+  width: 430px;
+  display: flex;
+  background-color: #fff;
+  padding: 32px 30px 24px 57px;
+}
+
+.reviews-modal_content {
+  width: 316px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Manrope", sans-serif;
+  color: #3a383b;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.069px;
+}
+
+.reviews-modal_title {
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px; /* 121.053% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+.reviews-modal_text {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px; /* 153.333% */
+  margin-bottom: 19px;
+}
+
+/* thankYouModal */
+
+#thankYouModal .reviews-modal_window {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#thankYouModal .reviews-modal_content {
+  width: 100%;
+  padding: 0px 57px 42px 57px;
+}
+
+#thankYouModal h2 {
+  text-transform: uppercase;
+  margin-bottom: 23px;
+}
+
+#thankYouModal p {
+  margin-bottom: 54px;
+}
+
+#closeThankYouModal {
+  background-color: #ed4b58;
+  color: #fff;
+}
+
+.thankYouModal_img {
+  position: relative;
+}
+.thankYouModal_img img {
+  width: 100%;
+}
+
+/* Крестик для закрытия модального окна (thankYouModal) */
+.close-thankYouModal {
+  float: right;
+  position: relative;
+  bottom: 310px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 52px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-thankYouModal:hover {
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .close-thankYouModal {
+    float: right;
+    position: relative;
+    bottom: 260px;
+  }
+}
+
+/* Выбор услуги */
+.dropdown {
+  position: relative;
+  margin-top: 15px;
+}
+
+.dropdown label {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.069px;
+  margin-bottom: 6px;
+}
+
+.dropdown-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  color: #dd3c49;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.079px;
+  border-bottom: #000 solid 1px;
+  margin-bottom: 24px;
+}
+
+.dropdown-selected .reviews-modal_arrow {
+  transition: transform 0.2s;
+  font-size: 30px;
+  color: #000;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 69%;
+  left: -26px;
+  right: 0;
+  background-color: #fff;
+  display: none;
+  overflow-y: visible;
+  z-index: 1;
+  list-style: none;
+  font-size: 17px;
+  border: #000 solid 1px;
+  width: 370px;
+  height: 246px;
+}
+
+.dropdown-list li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-list li:hover {
+  background-color: #ffede9;
+}
+/**/
+
+.reviews-modal_name {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.reviews-modal input {
+  border: none;
+  border-bottom: #000 solid 1px;
+  padding: 6px 0;
+}
+
+.reviews-modal_review {
+  margin-bottom: 32px;
+}
+
+.reviews-modal_review textarea {
+  resize: none;
+  width: 316px;
+  height: 187px;
+  padding: 14px 16px;
+  border: 1px solid #26364b;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.079px;
+  margin-top: 10px;
+}
+
+.reviews-modal_review textarea::placeholder,
+.reviews-modal input::placeholder {
+  color: #b7b7b7;
+}
+
+.reviews-modal_btn {
+  width: 300px;
+  height: 56px;
+  flex-shrink: 0;
+  border: 1px solid #b7b7b7;
+  color: #b7b7b7;
+  background-color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.reviews-modal_btn.active {
+  background-color: #ed4b58;
+  color: #fff;
+}
+
+.reviews-modal_signature {
+  width: 300px;
+  color: #8e8e93;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.059px;
+}
+
+.close-reviews-modal {
+  height: 8px;
+  color: #aaa;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  bottom: 15px;
+}
+
+.close-reviews-modal:hover,
+.close-reviews-modal:focus {
+  color: #727272;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/****** Адаптация ********/
+
+@media screen and (max-width: 1100px) {
+  .leave-a-review {
+    background-position: center;
+  }
+
+  .leave-a-review_title {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 28px; /* 133.333% */
+    letter-spacing: 0.63px;
+  }
+
+  .leave-a-review_text {
+    max-width: 242px;
+    font-size: 15px;
+  }
+
+  .grid-item_reviews-section {
+    width: 420px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .grid_reviews-section {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 34px;
+    padding-left: 0;
+    justify-items: center;
+  }
+
+  /* Мобильный фильтр */
+
+  .filter_reviews-section {
+    display: none;
+  }
+  .filter_reviews-section_mobile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .filter_reviews-section_mobile-btn {
+    background-color: #fff;
+    color: #9c9b9d;
+    font-family: "Ysabeau SC", sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 14px; /* 73.684% */
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 55px;
+  }
+
+  .filter_reviews-section_mobile.active {
+    color: #3a383b;
+  }
+
+  .filter_reviews-section_mobile-btn {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    color: #9c9b9d;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+  }
+
+  .filter_reviews-section_mobile-btn.active {
+    display: flex;
+    color: #3a383b;
+    cursor: pointer;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .filter_reviews-section_mobile-arrow {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    color: #9c9b9d;
+    transition: transform 0.3s ease-out, color 0.3s ease-out;
+    margin-left: auto;
+  }
+
+  .filter_reviews-section_mobile-arrow.active {
+    transform: rotate(90deg);
+    color: #3a383b;
+  }
+
+  .filter_reviews-section_mobile.open .filter_reviews-section_mobile-btn {
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .grid-item_reviews-section {
+    width: 330px;
+    padding: 10 0;
+  }
+
+  .reviews-modal_window {
+    padding: inherit 15px;
+    width: 360px;
+    position: relative;
+    bottom: 55px;
+  }
+
+  .reviews-modal_content {
+    width: 270px;
+  }
+
+  .reviews-modal_review textarea {
+    width: 270px;
+  }
+
+  .reviews-modal_btn {
+    width: 270px;
+  }
+
+  .dropdown-list {
+    background-color: #494949;
+    color: #fff;
+    width: 326px;
+    height: 200px;
+    left: -31px;
+  }
+}
+
+/*----------------------------- Вакансии --------------------------------*/
+
+.vacancy-main-img {
+  height: 400px;
+  background-image: url(img/vacancy-main-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 55px;
+}
+
+.vacancy {
+  background-color: #f5f5f5;
+  padding-top: 48px;
+}
+
+.grid_vacancy-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  margin-bottom: 104px;
+}
+
+.grid-item_vacancy-section {
+  background-color: #fff;
+  padding-bottom: 26px;
+}
+
+.grid-item_vacancy-section img {
+  width: 100%;
+  height: auto;
+}
+
+.grid-link_vacancy-section_body {
+  padding: 27px 27px 0 27px;
+  height: 207px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.grid-item_vacancy-section h3 {
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px; /* 109.524% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vacancies-description {
+  color: #3a383b;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px; /* 153.333% */
+  margin-bottom: 45px;
+}
+
+.grid-link_vacancy-section {
+  text-decoration: none;
+  color: inherit;
+}
+
+.grid-link_vacancy-section:hover {
+  opacity: 0.8;
+}
+
+.read-btn_vacancy-section {
+  width: 262px;
+  height: 53px;
+  flex-shrink: 0;
+  background-color: #ed4b58;
+  color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .vacancy-main-img {
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .vacancy-main-img {
+    background-size: 150%;
+    background-position: center;
+    margin-bottom: 0;
+  }
+  .grid_vacancy-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .read-btn_vacancy-section {
+    background-color: #494949;
+  }
+
+  .breadcrumb {
+    background-color: #fff;
+    padding: 30px 0 14px 16px;
+  }
+}
+
+/*********************** Вакансия парикмахер ********************************/
+
+.vacancy-hairstylist {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 127px;
+}
+.vacancy-hairstylist-section_left-side {
+  display: flex;
+  flex-direction: column;
+}
+.vacancy-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.vacancy-item_title {
+  color: #ed4b58;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+.vacancy-item_ul {
+  color: #3f3f47;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 129.412% */
+  padding-left: 27px;
+}
+.vacancy-btn {
+  width: 262px;
+  height: 53px;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  background-color: #ed4b58;
+}
+.vacancy-hairstylist-section_right-side {
+  width: 605px;
+  height: 752px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 210px;
+}
+.vacancy-hairstylist-section_right-side_content {
+  width: 569px;
+  height: 648px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  right: 100px;
+  top: 8px;
+}
+.vacancy-hairstylist-section_right-side_content img {
+  width: 472px;
+  margin-bottom: 32px;
+}
+
+.vacancy-hairstylist-section_right-side_content_text {
+  color: #222;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 152.941% */
+}
+
+#h1-vacancy-hairstylist {
+  max-width: 370px;
+}
+
+/** Модалка вакансии **/
+
+.vacancy-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(58, 56, 59, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.vacancy-modal_window {
+  width: 430px;
+  display: flex;
+  background-color: #fff;
+  padding: 32px 30px 24px 57px;
+}
+
+.vacancy-modal_content {
+  width: 316px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Manrope", sans-serif;
+  color: #3a383b;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.069px;
+}
+
+.vacancy-modal_title {
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px; /* 121.053% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+
+.vacancy-modal_text {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px; /* 153.333% */
+  margin-bottom: 19px;
+}
+
+/* Выбор вакансии */
+.dropdown_vacancy {
+  position: relative;
+  margin-top: 15px;
+}
+
+.dropdown_vacancy label {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.069px;
+  margin-bottom: 6px;
+}
+
+.dropdown-selected_vacancy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  color: #dd3c49;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.079px;
+  border-bottom: #000 solid 1px;
+  margin-bottom: 24px;
+}
+
+.dropdown-selected_vacancy .vacancy-modal_arrow {
+  transition: transform 0.2s;
+  font-size: 30px;
+  color: #000;
+}
+
+.dropdown-list_vacancy {
+  position: absolute;
+  top: 69%;
+  left: -26px;
+  right: 0;
+  background-color: #fff;
+  display: none;
+  overflow-y: visible;
+  z-index: 1;
+  list-style: none;
+  font-size: 17px;
+  border: #000 solid 1px;
+  width: 370px;
+  height: inherit;
+}
+
+.dropdown-list_vacancy li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-list_vacancy li:hover {
+  background-color: #ffede9;
+}
+
+/**/
+
+.vacancy-modal_name {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.vacancy-modal input {
+  border: none;
+  border-bottom: #000 solid 1px;
+  padding: 6px 0;
+}
+
+.vacancy-modal_review textarea::placeholder,
+.vacancy-modal input::placeholder {
+  color: #b7b7b7;
+}
+
+.vacancy-modal_btn {
+  width: 300px;
+  height: 56px;
+  flex-shrink: 0;
+  border: 1px solid #b7b7b7;
+  color: #b7b7b7;
+  background-color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.vacancy-modal_btn.active {
+  background-color: #ed4b58;
+  color: #fff;
+}
+
+.close-vacancy-modal {
+  height: 8px;
+  color: #aaa;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  bottom: 15px;
+}
+
+.close-vacancy-modal:hover,
+.close-vacancy-modal:focus {
+  color: #727272;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Поле для телефона */
+.vacancy-modal_phone {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+  border-bottom: #000 solid 1px;
+  padding: 6px 0;
+}
+
+.country-code {
+  font-size: 17px;
+  font-weight: 400;
+  color: #000;
+  margin-right: 5px;
+}
+
+.phone-input input {
+  border: none;
+  font-size: 17px;
+  font-weight: 400;
+  color: #000;
+  outline: none;
+  width: 100%;
+}
+
+.phone-input input::placeholder {
+  color: #b7b7b7;
+}
+
+/* Кнопки для выбора пола */
+.vacancy-modal_gender {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.gender-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #b7b7b7;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  color: #000;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.gender-btn.active,
+.gender-btn:hover {
+  background-color: #ed4b58;
+  color: #fff;
+}
+
+/* Обновление стилей для активной кнопки отправки */
+.vacancy-modal_btn.active {
+  background-color: #ed4b58;
+  color: #fff;
+  border-color: #ed4b58;
+}
+
+/* Обновление стилей для модального окна */
+.vacancy-modal_window {
+  position: relative;
+}
+
+.close-vacancy-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 36px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-vacancy-modal:hover {
+  color: #727272;
+}
+
+@media screen and (max-width: 1250px) {
+  .vacancy-hairstylist-section_right-side {
+    position: relative;
+    left: 200px;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .vacancy-hairstylist-section_right-side {
+    display: none;
+  }
+  .vacancy-hairstylist {
+    flex-direction: column;
+  }
+  .vacancy-btn {
+    display: none;
+  }
+
+  .vacancy-modal {
+    display: flex;
+    position: static;
+    width: 329px;
+    height: inherit;
+    border: #000 1px solid;
+  }
+
+  .vacancy-modal_window {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 329px;
+  }
+
+  .dropdown-list_vacancy {
+    width: 312px;
+    left: 0;
+  }
+  .close-vacancy-modal {
+    display: none;
+  }
+  .vacancy-hairstylist {
+    margin-bottom: 50px;
+  }
+}
+
+/********************* САЛОНЫ *************************/
+
+.dg-widget {
+  height: 500px;
+  margin-bottom: 40px;
+}
+
+/********************* ПРАЙС *************************/
+
+.grid_price-section {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-bottom: 67px;
+  gap: 41px;
+}
+
+.button-text {
+  line-height: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .grid-item_price-section img {
+    width: 900px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .grid-item_price-section img {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-item_price-section img {
+    width: 350px;
+  }
+}
+
+/********************* КОНТАКТЫ *************************/
+
+.contacts-section {
+  display: flex;
+  padding-top: 70px;
+  justify-content: space-between;
+}
+
+.contact-info {
+  color: #222;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.contact-info,
+.working-hours,
+.social-networks,
+.feedback-form {
+  margin-bottom: 40px;
+}
+
+.contact-info h2,
+.working-hours h2,
+.social-networks h2,
+.feedback-form h2 {
+  font-size: 25px;
+  color: #ed4b58;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.contact-info p,
+.working-hours p,
+.social-networks .social-links a,
+.feedback-form label {
+  font-size: 17px;
+  color: #3a383b;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+.contact-info p a,
+.working-hours p {
+  color: #222;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.social-links a:hover {
+  color: #ed4b58;
+}
+
+@media screen and (max-width: 900px) {
+  .contacts-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*************************** index ************************
+
+/* Главная страница */
+.main-banner {
+  position: relative;
+  background-image: url("img/brian-lawson.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 20px;
+  color: #fff;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+/* Полупрозрачный градиентный оверлей */
+.main-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.5)
+  );
+  z-index: 1;
+}
+
+.main-banner h1,
+.main-banner p {
+  position: relative;
+  z-index: 2;
+}
+
+.main-banner h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.main-banner p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.main-btn {
+  background-color: #ed4b58;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main-btn:hover {
+  background-color: #dd3c49;
+  transform: translateY(-2px);
+}
+
+/* Общий стиль секций */
+.about-us,
+.services-preview,
+.testimonials,
+.gallery-preview,
+.blog-preview,
+.salons-preview,
+.vacancies-preview,
+.gift-certificates-preview {
+  margin: 70px 0;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+/* Заголовки секций */
+.about-us h2,
+.services-preview h2,
+.testimonials h2,
+.gallery-preview h2,
+.blog-preview h2,
+.salons-preview h2,
+.vacancies-preview h2,
+.gift-certificates-preview h2 {
+  font-size: 30px;
+  color: #ed4b58;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Подчеркивание заголовков */
+.about-us h2::after,
+.services-preview h2::after,
+.testimonials h2::after,
+.gallery-preview h2::after,
+.blog-preview h2::after,
+.salons-preview h2::after,
+.vacancies-preview h2::after,
+.gift-certificates-preview h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ed4b58;
+  margin: 10px auto 0;
+}
+
+/* Услуги */
+.services-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.service-item {
+  text-align: center;
+  max-width: 300px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(237, 75, 88, 0.05),
+    rgba(255, 255, 255, 0.1)
+  );
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.service-item:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.service-item img {
+  width: 250px;
+  height: 332px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  z-index: 2;
+  position: relative;
+}
+
+.service-item h3 {
+  font-size: 20px;
+  color: #ed4b58;
+  margin-bottom: 10px;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
+
+.services-link,
+.testimonials-link,
+.gallery-preview-link,
+.blog-preview-link,
+.salons-preview-link,
+.vacancies-preview-link,
+.gift-certificates-preview-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ed4b58;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.services-link:hover,
+.testimonials-link:hover,
+.gallery-preview-link:hover,
+.blog-preview-link:hover,
+.salons-preview-link:hover,
+.vacancies-preview-link:hover,
+.gift-certificates-preview-link:hover {
+  color: #dd3c49;
+}
+
+/* Отзывы */
+.testimonial-container {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-in-out;
+}
+
+.testimonial p {
+  font-style: italic;
+  font-size: 18px;
+  color: #333;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.testimonial.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Галерея */
+.gallery-preview {
+  background: #fff7f8;
+}
+.gallery-preview-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.gallery-preview-item {
+  max-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.gallery-preview-item:hover {
+  transform: scale(1.03);
+}
+
+.gallery-preview-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.gallery-preview-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Блог */
+.blog-preview-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.blog-preview-item {
+  max-width: 300px;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.blog-preview-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.blog-preview-item img {
+  width: 100%;
+  height: auto;
+}
+
+.blog-preview-item h3 {
+  font-size: 18px;
+  margin: 15px;
+  color: #ed4b58;
+}
+
+.blog-preview-item p {
+  font-size: 14px;
+  margin: 0 15px 15px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.blog-read-more {
+  margin: 0 15px 15px;
+  color: #ed4b58;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Салоны */
+.salons-preview {
+  background: #fafafa;
+  border-radius: 15px;
+  padding: 40px 20px;
+}
+
+.salons-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.salon-item {
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: left;
+  padding: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.salon-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.salon-item h3 {
+  font-size: 18px;
+  color: #ed4b58;
+  margin-bottom: 10px;
+}
+
+.salon-item p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Вакансии */
+.vacancies-preview {
+  background: #fff7f8;
+  border-radius: 15px;
+  padding: 40px 20px;
+}
+
+.vacancies-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.vacancy-item {
+  max-width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: left;
+  padding: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.vacancy-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.vacancy-item h3 {
+  font-size: 18px;
+  color: #ed4b58;
+  margin-bottom: 10px;
+}
+
+.vacancy-item p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Подарочные сертификаты */
+.gift-certificates-preview {
+  background: linear-gradient(135deg, #fff7f8, #fafafa);
+  border-radius: 15px;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.gift-certificates-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.gift-certificate-item {
+  max-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.gift-certificate-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gift-certificate-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gift-certificate-item .gift-certificate-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.gift-certificate-item h3 {
+  font-size: 18px;
+  color: #ed4b58;
+  margin-bottom: 10px;
+}
+
+.gift-certificate-item p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Адаптивная версия */
+@media screen and (max-width: 900px) {
+  .services-grid,
+  .gallery-preview-grid,
+  .blog-preview-container,
+  .salons-grid,
+  .vacancies-grid,
+  .gift-certificates-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-item,
+  .gallery-preview-item,
+  .blog-preview-item,
+  .salon-item,
+  .vacancy-item,
+  .gift-certificate-item {
+    margin-bottom: 30px;
+    max-width: 90%;
+  }
+
+  .blog-preview-item img {
+    max-width: 400px;
+    align-self: center;
+  }
+
+  .main-banner h1 {
+    font-size: 36px;
+  }
+
+  .main-banner p {
+    font-size: 18px;
+  }
+}
+
+/**************** НОВЫЙ ПРАЙС **************************/
+
+.price-main-image {
+  background-image: url(img/price-main-img.jpg);
+  margin-bottom: 57px;
+}
+
+/* Верхняя навигация */
+
+.price-navigation {
+  display: flex;
+  margin-bottom: 48px;
+  max-width: 1200px;
+}
+.price-navigation_item {
+  display: flex;
+  align-items: center;
+  width: 370px;
+  height: 96px;
+  padding-left: 49px;
+  border: #9c9b9d 1px solid;
+  margin-right: 30px;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px; /* 121.053% */
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.price-navigation_item:last-child {
+  margin-right: 0;
+}
+
+.price-navigation_item_active {
+  background-color: #494949;
+  color: #fff;
+}
+
+/*Субнавигация для Парикмахерского зала*/
+
+.price-subnavigation-hair {
+  display: flex;
+  margin-bottom: 67px;
+}
+.price-subnavigation-hair_item {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 56px;
+  padding-left: 79px;
+  border: #eeefec 1px solid;
+  margin-right: 42px;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 1.14px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.price-subnavigation-hair_item_active {
+  background-color: #ed4b58;
+  color: #fff;
+}
+
+/* Сам прайс */
+
+.price-body {
+  margin-bottom: 150px;
+  transition: opacity 0.3s ease; 
+  opacity: 1; /* Начальное значение */
+}
+.price-body_item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.price-body_item-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 770px;
+}
+.price-content_title {
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px; /* 100% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.price-table {
+  width: 770px;
+  border-collapse: collapse;
+  margin-bottom: 48px;
+}
+
+.price-table_mobile {
+  border-collapse: collapse;
+}
+
+.price-table thead {
+  background-color: #494949;
+  color: #eeefec;
+  border-bottom: none;
+  height: 64px;
+  text-align: left;
+  color: #eeefec;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 146.667% */
+}
+
+.price-table th:nth-child(1),
+.price-table td:nth-child(1) {
+  padding: 26px 0 26px 26px;
+  width: 47%;
+}
+
+.price-table th:nth-child(1) {
+  border-right: 2px solid #494949;
+}
+
+.grey-thead th:nth-child(1) {
+  border-right: 2px solid #eeefec;
+}
+
+#price-body_item-hair {
+  margin-bottom: 77px;
+}
+
+#price-body_item-hair th:nth-child(2),
+#price-body_item-hair td:nth-child(2) {
+  text-align: end;
+  padding-right: 70px;
+}
+
+.price-table th:last-child {
+  padding-right: 10px;
+}
+
+tbody tr {
+  border-bottom: 1px dashed rgba(73, 73, 73, 0.5);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+tbody tr td {
+  padding: 16px 0;
+}
+
+.bold-span {
+  font-weight: bold;
+}
+.price-disclaimer {
+  color: #3f3f47;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.grey-thead {
+  background-color: #eeefec !important;
+  color: #000 !important;
+}
+
+.grey-thead tr th:nth-child(2) {
+  display: flex;
+  width: 100%;
+  padding-top: 17px;
+}
+
+.grey-tbody {
+  color: #3f3f47 !important;
+}
+
+.price-qustion {
+  padding-left: 180px;
+}
+
+/* Слайдер */
+
+.price-body_item-slider {
+  position: relative;
+  width: 322px;
+  height: 386px;
+  overflow: hidden;
+  margin-top: 52px;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  /* height: 100%; */
+}
+
+.slider-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-arrow {
+  left: 10px;
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+/* Прасйс - мобильная версия */
+
+.price-mobile-tables-container {
+  display: none;
+}
+
+.hair-type-selector {
+  display: flex;
+  cursor: pointer;
+  justify-content: end;
+}
+
+.hair-type-selector span {
+  margin-right: 5px;
+}
+
+.price-table_mobile thead {
+  height: 64px;
+}
+
+.price-qustion {
+  padding-left: 50px;
+}
+
+.down-arrow {
+  padding: 0 23px 0 12px;
+}
+
+.price-table_mobile {
+  margin-bottom: 77px;
+}
+
+.price-table_mobile th:nth-child(1),
+.price-table_mobile td:nth-child(1) {
+  text-align: start;
+  padding: 26px 0 26px 16px;
+  width: 50%;
+}
+
+.price-table_mobile td:nth-child(2) {
+  text-align: end;
+  padding-right: 61px;
+}
+
+/* Стили модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 40% auto;
+  padding: 32px 21px 13px 20px;
+  width: 328px;
+  /* height: 392px; */
+  flex-shrink: 0;
+  border: 1px solid #231f20;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px; /* Отступ от верхнего края */
+  right: 20px; /* Отступ от правого края */
+  font-size: 50px;
+  cursor: pointer;
+  color: #9c9b9d;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.modal-content h2 {
+  width: 70%;
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 23px; /* 109.524% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 37px;
+}
+
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+  color: #9c9b9d;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.079px;
+  padding-bottom: 13px;
+}
+
+.bold-span {
+  color: #3a383b;
+}
+
+.modal-content li {
+  padding: 20px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-content li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/*priceQuestionModal*/
+#priceQuestionModal .modal-content {
+  width: 430px;
+  height: 687px;
+}
+
+#priceQuestionModal ul {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+#priceQuestionModal li {
+  justify-content: start;
+  cursor: initial;
+}
+
+#priceQuestionModal li img {
+  padding-right: 18px;
+}
+
+#priceQuestionModal h2 {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.priceQuestionModal_logo {
+  margin-bottom: 22px;
+}
+
+.priceQuestionModal_disclaimer {
+  color: #878787;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px; /* 126.667% */
+  margin-bottom: 34px;
+}
+
+.priceQuestionModal_btn {
+  width: 300px;
+  height: 56px;
+  flex-shrink: 0;
+  background-color: #ed4b58;
+  color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  margin-left: 19px;
+}
+
+
+@media screen and (max-width: 1250px) {
+  .price-table,
+  .price-body_item-content {
+    width: 600px;
+  }
+
+  .price-navigation {
+    max-width: 1050px;
+  }
+
+  .price-qustion {
+    padding-left: 100px;
+  }
+  .price-table th {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .price-table,
+  .price-body_item-content {
+    width: 500px;
+  }
+  .price-navigation {
+    max-width: 1000px;
+  }
+
+  .price-navigation_item {
+    padding-left: 30px;
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .price-main-image {
+    display: none;
+  }
+
+  .price-navigation {
+    margin-top: 55px;
+  }
+
+  .price-body_item-slider {
+    display: none;
+  }
+  .price-table thead {
+    background-color: #eeefec;
+    color: #494949;
+  }
+
+  .price-table th,
+  .price-table_mobile th {
+    border-right: none !important;
+    font-size: 15px;
+  }
+
+  .grey-thead tr th:nth-child(2) {
+    justify-content: end;
+  }
+
+  .price-table,
+  .price-body_item-content {
+    width: 360px;
+  }
+
+  .price-body_item {
+    justify-content: center;
+  }
+  .price-disclaimer {
+    color: #878787;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px; /* 126.667% */
+    padding: 0 17px;
+  }
+
+  .price-content_title {
+    padding-left: 14px;
+  }
+
+  .price-desktop-tables-container {
+    display: none;
+  }
+  .price-mobile-tables-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #price-body_item-hair,
+  .price-body_item-content,
+  .price-table {
+    width: 100%;
+  }
+
+  #priceQuestionModal .modal-content {
+    width: 365px;
+    height: 636px;
+  }
+
+  .priceQuestionModal_disclaimer {
+    margin-bottom: 0;
+  }
+
+  .priceQuestionModal_btn {
+    width: 258px;
+    height: 44px;
+    font-size: 15px;
+  }
+}
+
+/* Мобильный вариант фильтра */
+
+@media (max-width: 900px) {
+  .price-subnavigation-hair_item {
+    padding-left: 31px;
+    width: 228px;
+  }
+
+  .price-navigation {
+    position: relative;
+    /* overflow: hidden; */
+    flex-direction: column;
+  }
+
+  .price-navigation_item {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+    border: none;
+  }
+
+  .price-navigation_item_active {
+    opacity: 1;
+    width: 500px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 25px;
+    background-color: #f5f5f5;
+    color: #494949;
+  }
+
+  .price-navigation_item.show {
+    opacity: 1;
+    height: 96px;
+    width: 500px;
+  }
+
+  .price-navigation_item img {
+    transition: transform 0.3s ease;
+  }
+
+  .price-navigation_item img.rotated {
+    transform: rotate(180deg);
+  }
+
+  .price-navigation {
+    display: flex;
+  }
+
+  .price-navigation-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .price-subnavigation-hair {
+    justify-content: center;
+  }
+
+  .price-subnavigation-hair_item {
+    width: 156px;
+    height: 36px;
+    text-transform: inherit;
+    font-size: 15px;
+    margin-right: 12px;
+    padding-left: 25px;
+  }
+
+  .price-navigation {
+    align-items: center;
+  }
+
+  .price-navigation_item_active {
+    width: 100vw;
+    padding-left: 20%;
+  }
+
+  .price-navigation_item.show {
+    width: 100vw;
+    padding-left: 20%;
+    margin-right: 30px;
+  }
+}
+
+/* Меню услуги и цены (моб. версия) */
+
+.services-mobile {
+  opacity: 1;
+  height: 400px;
+  border: none;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .services-mobile {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .services-mobile .menu-services-dropdown_item_container {
+    margin-bottom: 50px;
+  }
+
+  .services-mobile .menu-services-dropdown_item {
+    width: 270px;
+    height: 311px;
+  }
+
+  .services-mobile .menu-services-dropdown_title {
+    line-height: 26px;
+    font-size: 19px;
+  }
+
+  .services-mobile .menu-services-dropdown_text {
+    font-size: 13px;
+  }
+  .services-mobile .menu-services-dropdown_logo {
+    display: block;
+  }
+
+  .services-mobile .menu-services-dropdown_btn {
+    width: 164px;
+    height: 46px;
+    font-size: 17px;
+  }
+}
+
+/** САЛОНЫ **/
+
+.salons-introduction {
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 42px;
+}
+
+.salons-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 82px;
+  color: #3a383b;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+.salon-selection-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 47px;
+}
+
+.salon-selection_title {
+  color: #231f20;
+  font-size: 21px;
+  margin-bottom: 18px;
+}
+.salon-selection_title img {
+  padding-right: 14px;
+}
+.salon-selection_address {
+  margin-bottom: 26px;
+}
+.salon-selection_tel {
+  color: #000;
+  font-size: 19px;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+.salon-selection_working-hours {
+  color: #555;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 15px;
+}
+.salon-info {
+  display: flex;
+  flex-direction: column;
+}
+.salon-info_title {
+  color: #222;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44px; /* 110% */
+  letter-spacing: 1.2px;
+  margin-bottom: 36px;
+}
+.salon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.salon-grid_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.salon-grid_item:nth-child(1),
+.salon-grid_item:nth-child(2),
+.salon-grid_item:nth-child(3) {
+  justify-content: start;
+}
+
+.salon-grid_item:nth-child(5),
+.salon-grid_item:nth-child(6) {
+  padding-top: 36px;
+}
+
+.salon-grid_item-name {
+  color: #ed4b58;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 23px; /* 100% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.salon-grid_item-text {
+  color: #3a383b;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 26px; /* 136.842% */
+}
+.salon-grid_item-text_black {
+  color: #000;
+}
+.salon-grid_item-title {
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 23px; /* 100% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.salon-grid_item-text_grey {
+  color: #555;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 26px; /* 136.842% */
+  padding-top: 12px;
+}
+.salon-grid_item_btn {
+  width: 270px;
+  height: 52px;
+  color: #fff;
+  background-color: #ed4b58;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+}
+
+.salon-grid_item img {
+  width: 370px;
+  height: 256px;
+  flex-shrink: 0;
+  background-color: #f5f5f5;
+}
+
+#salon-shi,
+#salon-3d {
+  display: none;
+}
+
+@media screen and (max-width: 1250px) {
+  .salon-grid {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .salon-info {
+    align-items: center;
+  }
+  .salon-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .salon-selection-flex {
+    margin-bottom: 100px;
+  }
+
+  .salon-grid_item:nth-child(5),
+  .salon-grid_item:nth-child(6) {
+    padding-top: 0;
+  }
+
+  .salon-grid_item {
+    width: 371px;
+  }
+
+  .salon-grid_item_btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .salon-info {
+    align-items: start;
+  }
+}
+
+/* Контейнер слайдера */
+.salon-selection-mobile-container {
+  overflow-x: hidden; /* Скрываем скроллбар */
+  margin-bottom: 47px;
+}
+
+/* Слайдер */
+.salon-selection-mobile-slider {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory; /* Активируем скролл-снэппинг */
+  -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
+  scrollbar-width: none; /* Скрываем скроллбар в Firefox */
+}
+
+/* Скрываем скроллбар в WebKit */
+.salon-selection-mobile-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Слайды */
+.salon-selection-flex_item {
+  flex: 0 0 auto; /* Предотвращаем сжатие */
+  scroll-snap-align: start; /* Выравниваем по началу */
+  width: 250px;
+  padding: 20px;
+  border: 1px solid #d9d9d9;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.salon-selection-flex_item:last-child {
+  margin-right: 0;
+}
+.salon-selection_active {
+  border-color: #494949;
+}
+
+.salon-selection-mobile-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.salon-selection-mobile-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.salon-selection-mobile-dot.active {
+  background-color: #ed4b58;
+}
+
+/* Отключаем точки и свайп для экранов шире 1100px */
+/* @media (min-width: 1101px) {
+  .salon-selection-mobile-container {
+    overflow: visible;
+  }
+  .salon-selection-mobile-slider {
+    cursor: default;
+    transform: none !important;
+  }
+  .salon-selection-flex_item {
+    width: auto;
+    margin-right: 30px;
+    flex: 1;
+  }
+  .salon-selection-mobile-dots {
+    display: none;
+  }
+} */
+/* Адаптивность */
+
+@media (max-width: 1250px) {
+}
+
+@media (min-width: 901px) {
+  .salon-selection-mobile-slider {
+    /* overflow: visible; */
+    scroll-snap-type: none;
+  }
+
+  .salon-selection-flex_item {
+    width: 30%;
+    margin-right: 5%;
+  }
+
+  .salon-selection-mobile-dots {
+    display: none;
+  }
+}
+
+/******************* Сертификаты *************************/
+
+.certificate-main-image {
+  background-image: url(img/certificate-main-image.jpg);
+}
+
+.certificate-upper-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 54px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26px; /* 152.941% */
+}
+.certificate-upper-section-preamble {
+  display: flex;
+  flex-direction: column;
+  max-width: 770px;
+}
+.certificate-upper-section-preamble_title {
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px; /* 100% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 23px;
+}
+.certificate-upper-section-preamble_text {
+  color: #222;
+}
+.certificate-upper-section_adresses-rectangle {
+  max-width: 270px;
+  height: 224px;
+  border: 1px solid #494949;
+  padding: 16px 33px 16px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.adresses-rectangle_title {
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px; /* 128.571% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.adresses-rectangle_text {
+  color: #979797;
+  margin-bottom: 21px;
+}
+.adresses-rectangle_lower {
+  display: flex;
+  align-items: center;
+}
+.adresses-rectangle_lower_imgs {
+  display: flex;
+}
+
+.adresses-rectangle_lower_imgs img:first-child {
+  z-index: 2;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid #ed4b58;
+  width: 65px;
+  height: 65px;
+}
+
+.adresses-rectangle_lower_imgs img:last-child {
+  position: relative;
+  right: 25px;
+  top: 10px;
+  width: 45px;
+  height: 45px;
+}
+
+.adresses-rectangle_lower_btn {
+  background-color: #fff;
+  color: #ed4b58;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  width: 138px;
+  height: 23px;
+  border-bottom: 1px solid #ed4b58;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+}
+
+/**/
+
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  background: #f5f5f5;
+  margin-bottom: 84px;
+}
+.certificate-grid_item {
+  display: flex;
+  flex-direction: column;
+}
+.certificate-grid_item_img {
+  background-size: 85%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #eae7da;
+  max-width: 370px;
+  height: 240px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: end;
+  padding: 32.5px 41.5px;
+}
+
+.certificate-1000_img {
+  background-image: url(img/sert1000.jpg);
+}
+.certificate-1500_img {
+  background-image: url(img/sert1500.jpg);
+}
+.certificate-2000_img {
+  background-image: url(img/sert2000.jpg);
+}
+
+.certificate-grid_item_body {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 23px 31px 27px 26px;
+}
+
+.certificate-grid_item_title {
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px; /* 121.053% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+
+.certificate-grid_item_price {
+  color: #3a383b;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 23px; /* 100% */
+  letter-spacing: 3px;
+  margin-bottom: 19px;
+}
+
+.certificate-grid_item_text {
+  color: #3a383b;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 23px; /* 153.333% */
+  margin-bottom: 33px;
+}
+.certificate-grid_item_btn {
+  max-width: 262px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ed4b58;
+  color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.14px;
+  text-transform: uppercase;
+}
+
+.certificate-grid_item_red-tag {
+  border-radius: 30px;
+  background-color: #ed4b58;
+  color: #fff;
+  display: flex;
+  width: 88px;
+  height: 30px;
+  padding: 7px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.certificate-grid_item_yellow-tag {
+  border-radius: 30px;
+  background-color: #f49d3f;
+  color: #fff;
+  display: flex;
+  text-wrap: nowrap;
+  width: 111px;
+  height: 30px;
+  padding: 7px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 1250px) {
+  .certificate-upper-section-preamble {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .certificate-upper-section-preamble {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .certificate-upper-section,
+  .certificate-upper-section-preamble {
+    width: 100%;
+  }
+
+  .certificate-upper-section_adresses-rectangle {
+    display: none;
+  }
+  .certificate-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .certificate-grid_item {
+    margin: 0 auto;
+  }
+
+  .certificate-grid_item_img {
+    max-width: inherit;
+  }
+}
+
+@media screen and (max-width: 768) {
+  .certificate-grid_item {
+    max-width: 328px;
+  }
+}
+
+/**************** САМИ СЕРТИФИКАТЫ ****************/
+
+.certificate-1000-preambul {
+  max-width: 770px;
+  color: #222;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26px; /* 152.941% */
+  padding-top: 36px;
+  margin-bottom: 33px;
+}
+
+.certificate-1000-section {
+  display: flex;
+  justify-content: space-between;
+}
+.certificate-1000-section_main-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 770px;
+  margin-right: 5%;
+}
+.certificate-1000-section_main-content_img {
+  max-width: 893px;
+  height: auto;
+  flex-shrink: 0;
+  margin-bottom: 16px;
+}
+.certificate-1000-section_main-content_title {
+  color: #3a383b;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 33px; /* 143.478% */
+  margin-bottom: 30px;
+  max-width: 564px;
+}
+.certificate-1000-section_main-content_text {
+  color: #222;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26px; /* 152.941% */
+  margin-bottom: 65px;
+}
+.certificate-1000-section_main-content_btn {
+  width: 300px;
+  height: 52px;
+  flex-shrink: 0;
+  background-color: #ed4b58;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  margin-bottom: 69px;
+  cursor: pointer;
+}
+.certificate-1000-section_main-content_signature {
+  color: #3a383b;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  margin-bottom: 60px;
+  max-width: 470px;
+}
+.certificate-1000-section_right-side {
+  display: flex;
+  flex-direction: column;
+  max-width: 273px;
+}
+.certificate-1000-section_right-side_title {
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 23px; /* 100% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 41px;
+}
+
+.certificate-1000-section_cerificate {
+  display: flex;
+  flex-direction: column;
+  border: 0.73px solid #d9d9d9;
+  margin-bottom: 38.05px;
+}
+
+.certificate-1000-section_cerificate .certificate-grid_item_title {
+  font-size: 13.865px;
+  font-weight: 600;
+  line-height: 16.784px; /* 121.053% */
+  letter-spacing: 1.459px;
+  text-transform: uppercase;
+}
+.certificate-1000-section_cerificate .certificate-grid_item_price {
+  font-size: 16.784px;
+}
+.certificate-1000-section_cerificate .certificate-grid_item_text {
+  font-size: 10.946px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.784px; /* 153.333% */
+}
+
+.certificate-1000-section_cerificate .certificate-grid_item_body {
+  padding: 16px 23px 20px 19px;
+}
+.certificate-1000-section_cerificate .certificate-grid_item_btn {
+  font-size: 13.865px;
+  width: 191.19px;
+  height: 38.676px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 1100px) {
+  .certificate-1000-section_right-side {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .certificate-1000-section_main-content {
+    width: 95%;
+  }
+  .certificate-1000-section_main-content_img {
+    height: auto;
+  }
+
+  .certificate-1000-section_main-content_signature {
+    margin-bottom: 48px;
+  }
+}
+
+.certificate-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(58, 56, 59, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate-modal_window {
+  width: 430px;
+  display: flex;
+  background-color: #fff;
+  padding: 32px 30px 24px 57px;
+}
+
+.certificate-modal_content {
+  width: 316px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Manrope", sans-serif;
+  color: #3a383b;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.069px;
+}
+
+.certificate-modal_title {
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px; /* 121.053% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+.certificate-modal_text {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px; /* 153.333% */
+  margin-bottom: 19px;
+}
+
+/* Выбор услуги */
+.dropdown {
+  position: relative;
+  margin-top: 15px;
+}
+
+.dropdown label {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.069px;
+  margin-bottom: 6px;
+}
+
+.dropdown-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  color: #dd3c49;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.079px;
+  border-bottom: #000 solid 1px;
+  margin-bottom: 24px;
+}
+
+.dropdown-selected .certificate-modal_arrow {
+  transition: transform 0.2s;
+  font-size: 30px;
+  color: #000;
+}
+
+.certificate-modal_content .dropdown-list {
+  position: absolute;
+  top: 69%;
+  left: -26px;
+  right: 0;
+  background-color: #fff;
+  display: none;
+  overflow-y: visible;
+  z-index: 1;
+  list-style: none;
+  font-size: 17px;
+  border: #000 solid 1px;
+  width: 370px;
+  height: auto;
+}
+
+.dropdown-list li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-list li:hover {
+  background-color: #ffede9;
+}
+
+.certificate-modal_name {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.certificate-modal input {
+  border: none;
+  border-bottom: #000 solid 1px;
+  padding: 6px 0;
+}
+
+.certificate-modal_tel {
+  margin-bottom: 32px;
+}
+
+.certificate-modal_tel textarea {
+  resize: none;
+  width: 316px;
+  height: 50px;
+  padding: 14px 16px;
+  border: 1px solid #26364b;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.079px;
+  margin-top: 10px;
+}
+
+.certificate-modal_tel textarea::placeholder,
+.certificate-modal input::placeholder {
+  color: #b7b7b7;
+}
+
+.certificate-modal_btn {
+  width: 300px;
+  height: 56px;
+  flex-shrink: 0;
+  border: 1px solid #b7b7b7;
+  color: #b7b7b7;
+  background-color: #fff;
+  text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.certificate-modal_btn.active {
+  background-color: #ed4b58;
+  color: #fff;
+}
+
+.certificate-modal_signature {
+  width: 300px;
+  color: #8e8e93;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.059px;
+}
+
+.close-certificate-modal {
+  height: 8px;
+  color: #aaa;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  bottom: 15px;
+}
+
+.close-certificate-modal:hover,
+.close-certificate-modal:focus {
+  color: #727272;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .certificate-modal_content .dropdown-list {
+    background-color: #494949;
+  }
+}
+
+/*************** СТАТЬЯ ******************/
+
+.article-section {
+  display: flex;
+  justify-content: space-between;
+  color: #222;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26px; /* 152.941% */
+}
+
+.main-image-blog-article {
+  margin-bottom: 40px;
+}
+
+.article-section_content {
+  display: flex;
+  flex-direction: column;
+  max-width: 772px;
+}
+
+.main-image-blog-article {
+  max-width: 772px;
+}
+
+.article-block {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  margin-bottom: 40px;
+  max-width: 772px;
+}
+
+.article-block-title {
+  font-size: 21px;
+  font-style: normal;
+  line-height: 27px; /* 128.571% */
+  letter-spacing: 0.42px;
+  margin-bottom: 19px;
+}
+
+.article-block ul {
+  padding-top: 20px;
+}
+
+.article-block ul li,
+.article-block ol li {
+  margin-bottom: 5px;
+}
+
+.article-section_desctop-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-time {
+  margin-bottom: 17px;
+}
+
+.article-type {
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px; /* 100% */
+  width: 76px;
+  height: 26px;
+  padding: 5px 13px;
+  border-radius: 30px;
+  background: #eecec6;
+  margin-bottom: 54px;
+}
+.article-social-networks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 184px;
+}
+
+.article-social-networks img,
+.article-social-networks_mobile img {
+  width: 56px;
+  height: 56px;
+}
+
+/* faq */
+.article-faq-section {
+  max-width: 772px;
+  margin-bottom: 87px;
+}
+
+.article-faq-section_title {
+  color: #222;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 39px; /* 144.444% */
+  letter-spacing: 0.81px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.article-faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px 0;
+}
+
+.article-question {
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  padding-right: 30px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.article-question:hover {
+  color: #000;
+}
+
+.article-faq-item.open .article-question {
+  color: #ff7a76;
+}
+
+.article-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  padding: 0 0;
+}
+
+.article-faq-item.open .article-answer {
+  max-height: 500px; /* Достаточно большое значение для большинства ответов */
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.all-article-btn {
+  width: 200px;
+  height: 52px;
+  flex-shrink: 0;
+  color: #3a383b;
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.02px;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 1px solid #3a383b;
+  margin-bottom: 62px;
+}
+
+.all-article-btn:hover {
+  background-color: #eecec6;
+}
+
+.article-time_mobile {
+  display: none;
+}
+
+.article-social-networks_mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1070px) {
+  .article-section_desctop-links {
+    display: none;
+  }
+  .article-time_mobile {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    padding-top: 20px;
+  }
+  .article-time {
+    margin-bottom: 0;
+  }
+  .article-type {
+    margin-bottom: 0;
+  }
+
+  .article-social-networks_mobile {
+    display: flex;
+    justify-content: space-between;
+    max-width: 228px;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-image-blog-article {
+    width: 100%;
+  }
+}
+
+/*************************/
+
+/* О нас */
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 25px 0;
+  color: #222;
+  text-transform: uppercase;
+}
+
+.about-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.about-list li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.about-list-ordered {
+  list-style: decimal;
+  padding-left: 20px;
+}
+
+.about-link {
+  color: #ed4b58;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #ed4b58;
+  transition: color 0.3s ease;
+}
+
+.about-link:hover {
+  color: #dd3c49;
+}
+
+/******************/
+
+/* Общие стили для всех стрелок */
+.nav-arrow {
+  display: inline-block;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg); /* смотрит вниз */
+}
+
+.price-navigation_item:not(.price-navigation_item_active) .nav-arrow {
+  display: none;
+}
+
+.price-navigation_item_active.dropdown-open > .nav-arrow {
+  transform: rotate(180deg);
+}
+
+/**/
+
+@media screen and (max-width: 900px) {
+  .price-navigation {
+    display: flex;
+    flex-direction: column; 
+  }
+
+  .price-navigation_item {
+    order: 0; /* обычные пункты */
+  }
+
+  .price-navigation_item_active {
+    order: -1; /* активный пункт всегда поверх */
+  }
+}

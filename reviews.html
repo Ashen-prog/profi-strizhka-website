@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ПРОФИ Стрижка: Отзывы</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Ysabeau+SC:wght@1..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script defer src="reviews.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="https://w995285.yclients.com/widgetJS"
+      charset="UTF-8"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="content">
+        <div class="header">
+          <div class="header_logo-container">
+            <img src="img/header-logo.svg" alt="logo" />
+          </div>
+
+          <ul class="menu">
+            <li>
+              <div class="menu-btn-services">
+                Услуги и цены
+                <img src="img/arrow-down-1-black.svg" alt="стрелочка" />
+              </div>
+            </li>
+            <li class="menu-btn-services_mobile">
+              <a href="/services-mobile.html">Услуги и цены</a>
+            </li>
+            <li><a href="/salons.html">Салоны</a></li>
+            <li><a href="/gallery.html">Галерея</a></li>
+            <li><a id="menu-li-active" href="/reviews.html">Отзывы</a></li>
+            <li><a href="/blog.html">Блог</a></li>
+            <li><a href="/certificate.html">Сертификаты</a></li>
+            <li><a href="/contacts.html">Контакты</a></li>
+          </ul>
+          <button class="menu-toggle" aria-label="Открыть меню">
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+          </button>
+          <div class="overlay"></div>
+          <button class="sign-btn">ЗАПИСАТЬСЯ</button>
+        </div>
+        <div class="menu-services-dropdown">
+          <div class="menu-services-dropdown_item_container">
+            <div class="menu-services-dropdown_item" id="menu_styling">
+              <div class="menu-services-dropdown_title">Стайлинг</div>
+              <div class="menu-services-dropdown_text">Изящество и стиль</div>
+              <button class="menu-services-dropdown_btn">Смотреть</button>
+            </div>
+          </div>
+          <div class="menu-services-dropdown_item_container">
+            <div class="menu-services-dropdown_item" id="menu_hair">
+              <img
+                class="menu-services-dropdown_logo"
+                src="img/menu-services-dropdown_logo.svg"
+                alt="logo"
+              />
+              <div class="menu-services-dropdown_title">
+                Парикмахерские услуги
+              </div>
+              <div class="menu-services-dropdown_text">
+                Уникальность и индивидуальность
+              </div>
+              <button class="menu-services-dropdown_btn">Смотреть</button>
+            </div>
+          </div>
+          <div class="menu-services-dropdown_item_container">
+            <div class="menu-services-dropdown_item" id="menu_nail">
+              <div class="menu-services-dropdown_title">Ногтевой сервис</div>
+              <div class="menu-services-dropdown_text">Модно и элегантно</div>
+              <button class="menu-services-dropdown_btn">Смотреть</button>
+            </div>
+          </div>
+          <div class="menu-services-dropdown_item_container">
+            <div class="menu-services-dropdown_item" id="menu_brow">
+              <div class="menu-services-dropdown_title">Брови</div>
+              <div class="menu-services-dropdown_text">
+                Выразительно и гармонично
+              </div>
+              <button class="menu-services-dropdown_btn">Смотреть</button>
+            </div>
+          </div>
+        </div>
+        <div class="back-btn"><img src="img/back.svg" alt="Назад" />Назад</div>
+        <div class="under-header">
+          <div class="social-networks_under-header">
+            <img class="under-header_ok" src="img/ok-ru.svg" alt="OK" />
+            <img class="under-header_vk" src="img/vk-ru.svg" alt="VK" />
+            <img class="under-header_inst" src="img/inst.svg" alt="inst" />
+          </div>
+          <button class="under-header_online-registration-btn">
+            Онлайн запись
+          </button>
+        </div>
+        <h1 class="h1">Отзывы наших гостей</h1>
+        <div class="back-btn back-mobile">
+          <img src="img/back.svg" alt="Назад" />Назад
+        </div>
+      </div>
+      <div class="vector-container">
+        <img
+          class="vector"
+          src="img/vector.svg"
+          alt="Делаем людей красивыми 8 лет"
+        />
+      </div>
+    </header>
+    <main>
+      <div class="content">
+        <div class="gallery-preamble">
+          Познакомьтесь с отзывами о работе наших мастеров. В наших салонах вас
+          ждёт не только комплекс услуг для вашего преображения, но и особенная
+          атмосфера любви и заботы о наших гостях. Мы любим своё дело и
+          стараемся сделать так, чтобы каждый человек остался максимально
+          доволен посещением нашего салона.
+        </div>
+      </div>
+      <section class="leave-a-review">
+        <div class="content">
+          <h2 class="leave-a-review_title">
+            Оставьте свой отзыв о нашем салоне!
+          </h2>
+          <div class="leave-a-review_text">
+            Работали с нами и хотите оставить отзыв? Напишите свои впечатления и
+            опыт, и мы опубликуем Ваш отзыв на нашем сайте.
+          </div>
+          <button class="leave-a-review_btn">Написать отзыв</button>
+        </div>
+      </section>
+      <div class="content">
+        <section class="reviews">
+          <!-- Фильтр -->
+          <div class="filter_reviews-section">
+            <button
+              class="filter_reviews-section-btn active"
+              data-filter_reviews-section="all"
+            >
+              <img src="img/a.svg" alt="Все отзывы" />
+              <div class="filter_reviews-section-btn_text">Все отзывы</div>
+            </button>
+            <button
+              class="filter_reviews-section-btn"
+              data-filter_reviews-section="yandex-review"
+            >
+              <img src="img/yandex.svg" alt="Яндекс" />
+            </button>
+            <button
+              class="filter_reviews-section-btn"
+              data-filter_reviews-section="2gis-review"
+            >
+              <img src="img/2gis.svg" alt="2Gis" />
+            </button>
+            <button
+              class="filter_reviews-section-btn"
+              data-filter_reviews-section="site-review"
+            >
+              <img src="img/hair.svg" alt="Отзывы на сайте" />
+              <div class="filter_reviews-section-btn_text">Отзывы на сайте</div>
+            </button>
+          </div>
+
+          <!-- Мобильный Фильтр -->
+          <div class="filter_reviews-section_mobile">
+            <button
+              class="filter_reviews-section_mobile-btn active"
+              data-filter_reviews-section="all"
+            >
+              <span class="button-text">Все</span>
+              <div class="filter_reviews-section_mobile-arrow">&#8250;</div>
+            </button>
+            <button
+              class="filter_reviews-section_mobile-btn"
+              data-filter_reviews-section="yandex-review"
+            >
+              <span class="button-text">Яндекс</span>
+              <div class="filter_reviews-section_mobile-arrow">&#8250;</div>
+            </button>
+            <button
+              class="filter_reviews-section_mobile-btn"
+              data-filter_reviews-section="2gis-review"
+            >
+              <span class="button-text">2гис</span>
+              <div class="filter_reviews-section_mobile-arrow">&#8250;</div>
+            </button>
+            <button
+              class="filter_reviews-section_mobile-btn"
+              data-filter_reviews-section="site-review"
+            >
+              <span class="button-text">сайт</span>
+              <div class="filter_reviews-section_mobile-arrow">&#8250;</div>
+            </button>
+          </div>
+
+          <!-- Грид -->
+          <div class="grid_reviews-section" id="grid_reviews-section">
+            <!-- Элементы будут загружаться здесь -->
+          </div>
+
+          <!-- Кнопка "Показать ещё" -->
+          <button id="show-more-btn_reviews-section" style="display: none">
+            Показать ещё
+          </button>
+        </section>
+        <!-- Хлебные крошки -->
+        <nav aria-label="breadcrumb">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/index.html">Главная /</a></li>
+            <li class="breadcrumb-item">
+              <a href="/reviews.html">Отзывы</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <form id="reviewForm" method="post">
+        <div class="reviews-modal">
+          <div class="reviews-modal_window">
+            <div class="reviews-modal_content">
+              <div class="reviews-modal_title">Оставить отзыв</div>
+              <div class="reviews-modal_text">
+                Оставьте отзыв о посещении нашего салона и поделитесь своим
+                опытом с другими гостями!
+              </div>
+              <!-- Dropdown для выбора услуги -->
+              <div class="dropdown">
+                <label>Какой услугой вы пользовались?</label>
+                <div class="dropdown-selected">
+                  <span id="selected-service">Женская стрижка</span>
+                  <span class="reviews-modal_arrow">&#8250;</span>
+                </div>
+                <ul class="dropdown-list">
+                  <li>Женская стрижка</li>
+                  <li>Мужская стрижка</li>
+                  <li>Маникюр</li>
+                  <li>Педикюр</li>
+                  <li>Окрашивание волос</li>
+                  <li>Массаж</li>
+                </ul>
+              </div>
+              <!-- Скрытое поле для передачи выбранной услуги -->
+              <input
+                type="hidden"
+                name="service"
+                id="service-input"
+                value="Женская стрижка"
+              />
+              <!-- Поле для имени и фамилии -->
+              <div class="reviews-modal_name">
+                <label for="fio">Ваши имя и фамилия:</label>
+                <input
+                  type="text"
+                  id="fio"
+                  name="fio"
+                  placeholder="Например: Ирина Иринова"
+                  required
+                />
+              </div>
+              <!-- Поле для отзыва -->
+              <div class="reviews-modal_review">
+                <label for="review">Текст Вашего отзыва:</label>
+                <textarea
+                  id="review"
+                  name="review"
+                  placeholder="Напишите свой отзыв"
+                  required
+                ></textarea>
+              </div>
+              <!-- Кнопка отправки -->
+              <button type="button" class="reviews-modal_btn" id="submitReview">
+                Отправить отзыв
+              </button>
+              <div class="reviews-modal_signature">
+                Нажимая кнопку, принимаю условия политики и пользовательского
+                соглашения
+              </div>
+            </div>
+            <span class="close-reviews-modal">&times;</span>
+          </div>
+        </div>
+      </form>
+      <!-- Благодарственное модальное окно -->
+      <div class="reviews-modal" id="thankYouModal" style="display: none">
+        <div class="reviews-modal_window">
+          <div class="thankYouModal_img">
+            <img src="img/thankYouModal.jpg" alt="Thank You" />
+            <button class="close-thankYouModal" id="closeThankYouModalX">
+              &times;
+            </button>
+          </div>
+          <div class="reviews-modal_content">
+            <h2>Спасибо за отзыв!</h2>
+            <p>
+              Мы опубликуем его в ближайшее время, как только сотрудники
+              технической поддержки проведут небольшую проверку. Благодарим за
+              посещение нашего салона и ждём вас снова!
+            </p>
+            <button class="reviews-modal_btn" id="closeThankYouModal">
+              Понятно, спасибо!
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="top-footer">
+        <div class="content">
+          <div class="top-footer-content">
+            <nav class="top-footer_nav">
+              <ul class="top-footer_nav-ul">
+                <li><a href="/price-hair-women.html">Услуги и цены</a></li>
+                <li><a href="/salons.html">Салоны</a></li>
+                <li><a href="/gallery.html">Галерея</a></li>
+                <li><a href="/reviews.html">Отзывы</a></li>
+                <li><a href="/blog.html">Блог</a></li>
+                <li><a href="/certificate.html">Сертификаты</a></li>
+                <li><a href="/contacts.html">Контакты</a></li>
+              </ul>
+            </nav>
+            <a
+              class="footer_online-registration-btn"
+              href="https://n1059344.yclients.com/select-city/25/select-branch?previousStepUrl=%2Fcompany%2F912077%2Fpersonal%2Fselect-services%3Fo%3D&o=, "
+              target="_blank"
+              >Онлайн запись</a
+            >
+            <button class="footer_online-registration-btn_mobile">
+              Записаться
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="middle-footer">
+        <div class="content">
+          <div class="middle-footer-content">
+            <div class="middle-footer-flex">
+              <div class="middle-footer-flex-item">
+                <img class="footer-logo" src="img/footer-logo.svg" alt="logo" />
+                <div class="copyright">
+                  © 2016-2024 Профи-стрижка™. Все права защищены
+                </div>
+                <a class="site-doument-link" href="/documents.html"
+                  >Документы сайта</a
+                >
+              </div>
+              <div class="middle-footer-flex-item">
+                <div class="middle-footer-flex-item_nav-tilte">Услуги</div>
+                <ul class="middle-footer-flex-item_nav-services">
+                  <li>
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                      href="/price.html#hair"
+                      >Парикмахерский зал</a
+                    >
+                  </li>
+                  <li>
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                      href="/price.html#nail"
+                      >Маникюрный зал</a
+                    >
+                  </li>
+                  <li>
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                      href="/price.html#brow"
+                      >Брови</a
+                    >
+                  </li>
+                  <li>
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                      href="/price.html"
+                      >Все услуги</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="middle-footer-flex-item">
+                <div class="middle-footer-flex-item_nav-tilte">Салоны</div>
+                <ul class="middle-footer-flex-item_nav-salons">
+                  <li><a href="/salons.html">Адреса салонов</a></li>
+                  <li><a href="/aboutus.html">О нас</a></li>
+                  <li><a href="/vacancy.html">Вакансии</a></li>
+                  <li><a href="/contacts.html">Связаться с нами</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="middle-footer-contacts">
+              <a class="footer_tel" href="tel:+79518814884"
+                >+7 (951) 881-48-84</a
+              >
+              <a class="footer_email" href="mailto:cirulnik64@mail.ru"
+                >Email: cirulnik64@mail.ru</a
+              >
+              <div class="footer_social-networks">
+                <img class="footer_tg" src="img/footer-tg.svg" alt="Telegram" />
+                <img
+                  class="footer_inst"
+                  src="img/footer-inst.svg"
+                  alt="Instagram"
+                />
+                <img class="footer_vk" src="img/footer-vk.svg" alt="VK" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="middle-footer_mobile">
+        <div class="content">
+          <div class="middle-footer_mobile-content">
+            <div class="logo-and-social-networks">
+              <img class="footer-logo" src="img/footer-logo.svg" alt="logo" />
+              <div class="footer_social-networks">
+                <img class="footer_tg" src="img/footer-tg.svg" alt="Telegram" />
+                <img
+                  class="footer_inst"
+                  src="img/footer-inst.svg"
+                  alt="Instagram"
+                />
+                <img class="footer_vk" src="img/footer-vk.svg" alt="VK" />
+              </div>
+            </div>
+            <a class="footer_tel" href="tel:+79518814884">+7 (951) 881-48-84</a>
+            <a class="footer_email" href="mailto:cirulnik64@mail.ru"
+              >Email: cirulnik64@mail.ru</a
+            >
+            <div class="footer-nav_mobile">
+              <div class="middle-footer-flex-item">
+                <div class="middle-footer-flex-item_nav-tilte">Услуги</div>
+                <ul class="middle-footer-flex-item_nav-services">
+                  <li>
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                      href="/price.html#hair"
+                      >Парикмахерский зал</a
+                    >
+                  </li>
+                  <li>
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                      href="/price.html#nail"
+                      >Маникюрный зал</a
+                    >
+                  </li>
+                  <li>
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                      href="/price.html#brow"
+                      >Брови</a
+                    >
+                  </li>
+                  <li>
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                      href="/price.html"
+                      >Все услуги</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="middle-footer-flex-item">
+                <div class="middle-footer-flex-item_nav-tilte">Салоны</div>
+                <ul class="middle-footer-flex-item_nav-salons">
+                  <li><a href="/salons.html">Адреса салонов</a></li>
+                  <li><a href="/aboutus.html">О нас</a></li>
+                  <li><a href="/vacancy.html">Вакансии</a></li>
+                  <li><a href="/contacts.html">Связаться с нами</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="copyright">
+              © 2016-2024 Профи-стрижка™. Все права защищены
+            </div>
+            <a class="site-doument-link" href="/documents.html"
+              >Документы сайта</a
+            >
+            <img
+              class="footer_payments-mobile"
+              src="img/footer-payments_mobile.svg"
+              alt="Payments"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="lower-footer">
+          <img
+            class="footer_payments"
+            src="img/footer-payments.svg"
+            alt="Payments"
+          />
+          <div class="lower-footer_cookies">
+            Используем cookies для корректной работы сайта и других целей,
+            предусмотренных политикой обработки персональных данных.
+          </div>
+          <div class="legal-notice">
+            Данный сайт носит информационно-справочный характер и ни при каких
+            условиях не является публичной офертой, определяемой положениями
+            статей 435, 437 Гражданского Кодекса РФ. Подробную информацию
+            уточняйте у администраторов
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
