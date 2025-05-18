@@ -4324,13 +4324,13 @@ tbody tr td {
 }
 
 .certificate-1000_img {
-  background-image: url(../img/sert1000.jpg);
+  background-image: url(../img/sert1000.webp);
 }
 .certificate-1500_img {
-  background-image: url(../img/sert1500.jpg);
+  background-image: url(../img/sert1000.webp);
 }
 .certificate-2000_img {
-  background-image: url(../img/sert2000.jpg);
+  background-image: url(../img/sert1000.webp);
 }
 
 .certificate-grid_item_body {

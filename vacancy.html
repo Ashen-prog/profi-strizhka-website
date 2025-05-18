@@ -13,21 +13,32 @@
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/script.js"></script>
     <script defer src="js/vacancy.js"></script>
-    <script defer type="text/javascript" src="https://w995285.yclients.com/widgetJS" charset="UTF-8"></script>
+    <script id="yclients-widget-loader"></script>
+    <script>
+      (function() {
+        var yclientsScript = document.createElement('script');
+        yclientsScript.type = 'text/javascript';
+        yclientsScript.async = true;
+        yclientsScript.charset = 'UTF-8';
+        yclientsScript.src = 'https://w995285.yclients.com/widgetJS';
+        var ref = document.getElementById('yclients-widget-loader');
+        ref.parentNode.insertBefore(yclientsScript, ref.nextSibling);
+      })();
+    </script>
   </head>
   <body>
     <header>
       <div class="content">
         <div class="header">
           <div class="header_logo-container">
-            <img src="img/header-logo.svg" alt="logo" />
+            <img src="img/header-logo.svg" alt="logo" loading="lazy" />
           </div>
           
           <ul class="menu">
             <li>
               <div class="menu-btn-services">
                 Услуги и цены
-                <img src="img/arrow-down-1-black.svg" alt="стрелочка" />
+                <img src="img/arrow-down-1-black.svg" alt="стрелочка" loading="lazy" />
               </div>
             </li>
             <li class="menu-btn-services_mobile"><a href="/services-mobile.html">Услуги и цены</a></li>
@@ -57,7 +68,7 @@
           </div>
           <div class="menu-services-dropdown_item_container">
             <div class="menu-services-dropdown_item" id="menu_hair">
-              <img class="menu-services-dropdown_logo" src="img/menu-services-dropdown_logo.svg" alt="logo">
+              <img class="menu-services-dropdown_logo" src="img/menu-services-dropdown_logo.svg" alt="logo" loading="lazy" />
               <div class="menu-services-dropdown_title">Парикмахерские услуги</div>
               <div class="menu-services-dropdown_text">Уникальность
                 и индивидуальность</div>
@@ -84,9 +95,9 @@
         <div class="back-btn"><img src="img/back.svg" alt="Назад" />Назад</div>
         <div class="under-header">
           <div class="social-networks_under-header">
-            <img class="under-header_ok" src="assets/img/ok-ru.svg" alt="OK" />
-            <img class="under-header_vk" src="assets/img/vk-ru.svg" alt="VK" />
-            <img class="under-header_inst" src="assets/img/inst.svg" alt="inst" />
+            <img class="under-header_ok" src="assets/img/ok-ru.svg" alt="OK" loading="lazy" />
+            <img class="under-header_vk" src="assets/img/vk-ru.svg" alt="VK" loading="lazy" />
+            <img class="under-header_inst" src="assets/img/inst.svg" alt="inst" loading="lazy" />
           </div>
           <button class="under-header_online-registration-btn">Онлайн запись</button>
         </div>
@@ -156,7 +167,7 @@
           <div class="middle-footer-content">
             <div class="middle-footer-flex">
               <div class="middle-footer-flex-item">
-                <img class="footer-logo" src="img/footer-logo.svg" alt="logo" />
+                <img class="footer-logo" src="img/footer-logo.svg" alt="logo" loading="lazy" />
                 <div class="copyright">
                   © 2016-2024 Профи-стрижка™. Все права защищены
                 </div>
@@ -166,25 +177,25 @@
                 <div class="middle-footer-flex-item_nav-tilte">Услуги</div>
                 <ul class="middle-footer-flex-item_nav-services">
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                    <img src="img/arrow-right-1.svg" alt="arrow" loading="lazy" /><a
                       href="/price.html#hair"
                       >Парикмахерский зал</a
                     >
                   </li>
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                    <img src="img/arrow-right-1.svg" alt="arrow" loading="lazy" /><a
                       href="/price.html#nail"
                       >Маникюрный зал</a
                     >
                   </li>
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                    <img src="img/arrow-right-1.svg" alt="arrow" loading="lazy" /><a
                       href="/price.html#brow"
                       >Брови</a
                     >
                   </li>
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                    <img src="img/arrow-right-1.svg" alt="arrow" loading="lazy" /><a
                       href="/price.html"
                       >Все услуги</a
                     >
@@ -209,13 +220,13 @@
                 >Email: cirulnik64@mail.ru</a
               >
               <div class="footer_social-networks">
-                <img class="footer_tg" src="img/footer-tg.svg" alt="Telegram" />
+                <img class="footer_tg" src="img/footer-tg.svg" alt="Telegram" loading="lazy" />
                 <img
                   class="footer_inst"
                   src="img/footer-inst.svg"
                   alt="Instagram"
                 />
-                <img class="footer_vk" src="img/footer-vk.svg" alt="VK" />
+                <img class="footer_vk" src="img/footer-vk.svg" alt="VK" loading="lazy" />
               </div>
             </div>
           </div>

@@ -4,19 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ПРОФИ Стрижка: Главная</title>
-    <meta name="description" content="ПРОФИ Стрижка — сеть салонов красоты в Саратове. Стрижки, окрашивания, маникюр, уход за волосами и ногтями. Запишитесь онлайн!">
-    <meta name="keywords" content="салон красоты, стрижка, окрашивание, маникюр, Саратов, уход за волосами, уход за ногтями, profi-strizhka">
-    <link rel="canonical" href="https://profi-strizhka.ru/">
+    <meta
+      name="description"
+      content="ПРОФИ Стрижка — сеть салонов красоты в Саратове. Стрижки, окрашивания, маникюр, уход за волосами и ногтями. Запишитесь онлайн!"
+    />
+    <meta
+      name="keywords"
+      content="салон красоты, стрижка, окрашивание, маникюр, Саратов, уход за волосами, уход за ногтями, profi-strizhka"
+    />
+    <link rel="canonical" href="https://profi-strizhka.ru/" />
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/script.js"></script>
     <script defer src="js/main.js"></script>
     <script defer src="js/vacancy.js"></script>
-    <script
-      defer
-      type="text/javascript"
-      src="https://w995285.yclients.com/widgetJS"
-      charset="UTF-8"
-    ></script>
+    <script id="yclients-widget-loader"></script>
+    <script>
+      (function () {
+        var yclientsScript = document.createElement("script");
+        yclientsScript.type = "text/javascript";
+        yclientsScript.async = true;
+        yclientsScript.charset = "UTF-8";
+        yclientsScript.src = "https://w995285.yclients.com/widgetJS";
+        var ref = document.getElementById("yclients-widget-loader");
+        ref.parentNode.insertBefore(yclientsScript, ref.nextSibling);
+      })();
+    </script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
       (function (m, e, t, r, i, k, a) {
@@ -66,14 +78,14 @@
       <div class="content">
         <div class="header">
           <div class="header_logo-container">
-            <img src="img/header-logo.svg" alt="logo" />
+            <img src="img/header-logo.svg" alt="logo" loading="lazy" />
           </div>
 
           <ul class="menu">
             <li>
               <div class="menu-btn-services">
                 Услуги и цены
-                <img src="img/arrow-down-1-black.svg" alt="стрелочка" />
+                <img src="img/arrow-down-1-black.svg" alt="стрелочка" loading="lazy" />
               </div>
             </li>
             <li class="menu-btn-services_mobile">
@@ -139,9 +151,9 @@
         <div class="back-btn"></div>
         <div class="under-header">
           <div class="social-networks_under-header">
-            <img class="under-header_ok" src="img/ok-ru.svg" alt="OK" />
-            <img class="under-header_vk" src="img/vk-ru.svg" alt="VK" />
-            <img class="under-header_inst" src="img/inst.svg" alt="inst" />
+            <img class="under-header_ok" src="img/ok-ru.svg" alt="OK" loading="lazy" />
+            <img class="under-header_vk" src="img/vk-ru.svg" alt="VK" loading="lazy" />
+            <img class="under-header_inst" src="img/inst.svg" alt="inst" loading="lazy" />
           </div>
           <button class="under-header_online-registration-btn">
             Онлайн запись
@@ -170,24 +182,22 @@
           <h2>Наши услуги</h2>
           <div class="services-grid">
             <div class="service-item">
-              <img src="img/gallery/1.jpg" alt="Стрижки" />
+              <img src="img/gallery/1.jpg" alt="Стрижки" loading="lazy" />
               <h3>Стрижки</h3>
               <p>Идеальная стрижка для мужчин и женщин любого возраста.</p>
             </div>
             <div class="service-item">
-              <img src="img/gallery/2.jpg" alt="Маникюр" />
+              <img src="img/gallery/2.jpg" alt="Маникюр" loading="lazy" />
               <h3>Маникюр</h3>
               <p>Профессиональный уход и стильный дизайн ногтей.</p>
             </div>
             <div class="service-item">
-              <img src="img/gallery/9.jpg" alt="Окрашивание" />
+              <img src="img/gallery/9.jpg" alt="Окрашивание" loading="lazy" />
               <h3>Окрашивания</h3>
               <p>Индивидуальный подход к созданию вашего уникального цвета.</p>
             </div>
           </div>
-          <a href="/price.html" class="services-link"
-            >Смотреть все услуги</a
-          >
+          <a href="/price.html" class="services-link">Смотреть все услуги</a>
         </section>
 
         <section class="testimonials reveal">
@@ -217,13 +227,25 @@
           </p>
           <div class="gallery-preview-grid">
             <div class="gallery-preview-item">
-              <img src="img/gallery/12.jpg" alt="Работа мастера" />
+              <img
+                src="img/gallery/12.jpg"
+                alt="Работа мастера"
+                loading="lazy"
+              />
             </div>
             <div class="gallery-preview-item">
-              <img src="img/gallery/4.jpg" alt="Работа мастера" />
+              <img
+                src="img/gallery/4.jpg"
+                alt="Работа мастера"
+                loading="lazy"
+              />
             </div>
             <div class="gallery-preview-item">
-              <img src="img/gallery/7.jpg" alt="Работа мастера" />
+              <img
+                src="img/gallery/7.jpg"
+                alt="Работа мастера"
+                loading="lazy"
+              />
             </div>
           </div>
           <a href="/gallery.html" class="gallery-preview-link"
@@ -279,7 +301,7 @@
           </p>
           <div class="blog-preview-container">
             <article class="blog-preview-item">
-              <img src="img/blog/1.jpg" alt="Пример статьи" />
+              <img src="img/blog/1.jpg" alt="Пример статьи" loading="lazy" />
               <h3>Как подобрать идеальное средство для укладки волос</h3>
               <p>
                 Узнайте, какие критерии помогут вам сделать правильный выбор и
@@ -290,7 +312,7 @@
               >
             </article>
             <article class="blog-preview-item">
-              <img src="img/blog/2.jpg" alt="Пример статьи" />
+              <img src="img/blog/2.jpg" alt="Пример статьи" loading="lazy" />
               <h3>Уход за окрашенными волосами</h3>
               <p>
                 Сохраните яркость цвета и здоровье волос с помощью наших
@@ -328,7 +350,11 @@
           </p>
           <div class="gift-certificates-grid">
             <div class="gift-certificate-item">
-              <img src="img/sert1000.jpg" alt="Подарочный сертификат" />
+              <img
+                src="img/sert1000.webp"
+                alt="Подарочный сертификат"
+                loading="lazy"
+              />
               <div class="gift-certificate-info">
                 <h3>Сертификат на 1000</h3>
                 <p>Отличный подарок для тех, кто ценит стиль и качество.</p>
@@ -336,7 +362,11 @@
               </div>
             </div>
             <div class="gift-certificate-item">
-              <img src="img/sert1500.jpg" alt="Подарочный сертификат" />
+              <img
+                src="img/sert1000.webp"
+                alt="Подарочный сертификат"
+                loading="lazy"
+              />
               <div class="gift-certificate-info">
                 <h3>Сертификат на 1500</h3>
                 <p>Подарите вашим близким возможность обновить свой образ.</p>
@@ -344,7 +374,11 @@
               </div>
             </div>
             <div class="gift-certificate-item">
-              <img src="img/sert2000.jpg" alt="Подарочный сертификат" />
+              <img
+                src="img/sert1000.webp"
+                alt="Подарочный сертификат"
+                loading="lazy"
+              />
               <div class="gift-certificate-info">
                 <h3>Сертификат на 2000</h3>
                 <p>
@@ -393,7 +427,7 @@
           <div class="middle-footer-content">
             <div class="middle-footer-flex">
               <div class="middle-footer-flex-item">
-                <img class="footer-logo" src="img/footer-logo.svg" alt="logo" />
+                <img class="footer-logo" src="img/footer-logo.svg" alt="logo" loading="lazy" />
                 <div class="copyright">
                   © 2016-2024 Профи-стрижка™. Все права защищены
                 </div>
@@ -405,25 +439,25 @@
                 <div class="middle-footer-flex-item_nav-tilte">Услуги</div>
                 <ul class="middle-footer-flex-item_nav-services">
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                    <img src="img/arrow-right-1.svg" alt="arrow" loading="lazy" /><a
                       href="/price.html#hair"
                       >Парикмахерский зал</a
                     >
                   </li>
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                    <img src="img/arrow-right-1.svg" alt="arrow" loading="lazy" /><a
                       href="/price.html#nail"
                       >Маникюрный зал</a
                     >
                   </li>
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                    <img src="img/arrow-right-1.svg" alt="arrow" loading="lazy" /><a
                       href="/price.html#brow"
                       >Брови</a
                     >
                   </li>
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
+                    <img src="img/arrow-right-1.svg" alt="arrow" loading="lazy" /><a
                       href="/price.html"
                       >Все услуги</a
                     >
@@ -448,13 +482,13 @@
                 >Email: cirulnik64@mail.ru</a
               >
               <div class="footer_social-networks">
-                <img class="footer_tg" src="img/footer-tg.svg" alt="Telegram" />
+                <img class="footer_tg" src="img/footer-tg.svg" alt="Telegram" loading="lazy" />
                 <img
                   class="footer_inst"
                   src="img/footer-inst.svg"
                   alt="Instagram"
                 />
-                <img class="footer_vk" src="img/footer-vk.svg" alt="VK" />
+                <img class="footer_vk" src="img/footer-vk.svg" alt="VK" loading="lazy" />
               </div>
             </div>
           </div>

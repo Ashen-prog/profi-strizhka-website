@@ -31,6 +31,18 @@
         ]
       }
     </script>
+    <script id="yclients-widget-loader"></script>
+    <script>
+      (function() {
+        var yclientsScript = document.createElement('script');
+        yclientsScript.type = 'text/javascript';
+        yclientsScript.async = true;
+        yclientsScript.charset = 'UTF-8';
+        yclientsScript.src = 'https://w995285.yclients.com/widgetJS';
+        var ref = document.getElementById('yclients-widget-loader');
+        ref.parentNode.insertBefore(yclientsScript, ref.nextSibling);
+      })();
+    </script>
   </head>
   <body>
     <div class="content">
@@ -106,9 +118,9 @@
           <div class="price-body_item-slider">
             <div class="slider-container">
               <div class="slider-images">
-                <img src="img/gallery/12.jpg" alt="Стрижка" />
-                <img src="img/gallery/21.png" alt="Стрижка" />
-                <img src="img/gallery/22.png" alt="Стрижка" />
+                <img src="img/gallery/12.jpg" alt="Стрижка" loading="lazy" />
+                <img src="img/gallery/21.png" alt="Стрижка" loading="lazy" />
+                <img src="img/gallery/22.png" alt="Стрижка" loading="lazy" />
               </div>
               <button class="slider-arrow prev-arrow">
                 <svg
@@ -243,9 +255,9 @@
           <div class="price-body_item-slider">
             <div class="slider-container">
               <div class="slider-images">
-                <img src="img/gallery/9.jpg" alt="Окрашивание" />
-                <img src="img/gallery/11.jpg" alt="Окрашивание" />
-                <img src="img/gallery/14.jpg" alt="Окрашивание" />
+                <img src="img/gallery/9.jpg" alt="Окрашивание" loading="lazy" />
+                <img src="img/gallery/11.jpg" alt="Окрашивание" loading="lazy" />
+                <img src="img/gallery/14.jpg" alt="Окрашивание" loading="lazy" />
               </div>
               <button class="slider-arrow prev-arrow">
                 <svg
@@ -343,9 +355,9 @@
           <div class="price-body_item-slider">
             <div class="slider-container">
               <div class="slider-images">
-                <img src="img/gallery/1.jpg" alt="Женская стрижка — пример работы" />
-                <img src="img/gallery/3.jpg" alt="Женская укладка — пример работы" />
-                <img src="img/gallery/10.jpg" alt="Окрашивание волос — пример работы" />
+                <img src="img/gallery/1.jpg" alt="Женская стрижка — пример работы" loading="lazy" />
+                <img src="img/gallery/3.jpg" alt="Женская укладка — пример работы" loading="lazy" />
+                <img src="img/gallery/10.jpg" alt="Окрашивание волос — пример работы" loading="lazy" />
               </div>
               <button class="slider-arrow prev-arrow">
                 <svg

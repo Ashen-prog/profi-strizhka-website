@@ -13,26 +13,32 @@
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/script.js"></script>
     <script defer src="js/gallery.js"></script>
-    <script
-      defer
-      type="text/javascript"
-      src="https://w995285.yclients.com/widgetJS"
-      charset="UTF-8"
-    ></script>
+    <script id="yclients-widget-loader"></script>
+    <script>
+      (function() {
+        var yclientsScript = document.createElement('script');
+        yclientsScript.type = 'text/javascript';
+        yclientsScript.async = true;
+        yclientsScript.charset = 'UTF-8';
+        yclientsScript.src = 'https://w995285.yclients.com/widgetJS';
+        var ref = document.getElementById('yclients-widget-loader');
+        ref.parentNode.insertBefore(yclientsScript, ref.nextSibling);
+      })();
+    </script>
   </head>
   <body>
     <header>
       <div class="content">
         <div class="header">
           <div class="header_logo-container">
-            <img src="img/header-logo.svg" alt="logo" />
+            <img src="img/header-logo.svg" alt="logo" loading="lazy" />
           </div>
 
           <ul class="menu">
             <li>
               <div class="menu-btn-services">
                 Услуги и цены
-                <img src="img/arrow-down-1-black.svg" alt="стрелочка" />
+                <img src="img/arrow-down-1-black.svg" alt="стрелочка" loading="lazy" />
               </div>
             </li>
             <li class="menu-btn-services_mobile">
@@ -97,7 +103,7 @@
         <div class="back-btn"><img src="img/back.svg" alt="Назад" />Назад</div>
         <div class="under-header">
           <div class="social-networks_under-header">
-            <img class="under-header_ok" src="img/ok-ru.svg" alt="OK" />
+            <img class="under-header_ok" src="img/ok-ru.svg" alt="OK" loading="lazy" />
             <img class="under-header_vk" src="img/vk-ru.svg" alt="VK" />
             <img class="under-header_inst" src="img/inst.svg" alt="inst" />
           </div>
@@ -236,7 +242,7 @@
           <div class="middle-footer-content">
             <div class="middle-footer-flex">
               <div class="middle-footer-flex-item">
-                <img class="footer-logo" src="img/footer-logo.svg" alt="logo" />
+                <img class="footer-logo" src="img/footer-logo.svg" alt="logo" loading="lazy" />
                 <div class="copyright">
                   © 2016-2024 Профи-стрижка™. Все права защищены
                 </div>

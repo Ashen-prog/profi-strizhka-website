@@ -78,8 +78,42 @@ let currentFilter = "all";
 let itemsLoaded = 0;
 
 /** Функция определения скорости интернета */
-function isInternetFast() {
-  return navigator.connection ? navigator.connection.downlink > 10 : true; // Если нельзя определить скорость, считаем интернет быстрым
+/** Проверка скорости интернета с кэшированием, обработкой ошибок и асинхронной загрузкой файла */
+function checkInternetSpeed(thresholdMbps = 2, cacheTimeMs = 60000) {
+  if (!window.__internetSpeedCache) {
+    window.__internetSpeedCache = { value: null, timestamp: 0 };
+  }
+  const now = Date.now();
+  if (window.__internetSpeedCache.value !== null && now - window.__internetSpeedCache.timestamp < cacheTimeMs) {
+    return Promise.resolve(window.__internetSpeedCache.value);
+  }
+  if (navigator.connection && typeof navigator.connection.downlink === "number") {
+    const isFast = navigator.connection.downlink > thresholdMbps;
+    window.__internetSpeedCache = { value: isFast, timestamp: now };
+    return Promise.resolve(isFast);
+  }
+  return new Promise((resolve) => {
+    const img = new Image();
+    const start = Date.now();
+    let finished = false;
+    img.onload = img.onerror = function () {
+      if (finished) return;
+      finished = true;
+      const duration = Date.now() - start;
+      // 70KB файл, если загрузился за < 500мс — считаем быстро
+      const isFast = duration < 500;
+      window.__internetSpeedCache = { value: isFast, timestamp: Date.now() };
+      resolve(isFast);
+    };
+    img.src = "img/gallery/1.jpg?speedtest=" + Math.random();
+    setTimeout(() => {
+      if (!finished) {
+        finished = true;
+        window.__internetSpeedCache = { value: false, timestamp: Date.now() };
+        resolve(false);
+      }
+    }, 2000);
+  });
 }
 
 /** Загрузка элементов */
@@ -134,8 +168,10 @@ document
   });
 
 // Первоначальная загрузка отзывов
-itemsPerLoad = isInternetFast() ? data.length : 9;
-loadItems();
+checkInternetSpeed(2, 60000).then(isFast => {
+  itemsPerLoad = isFast ? data.length : 9;
+  loadItems();
+});
 
 /** Фильтрация отзывов */
 function setDesktopFilterHandlers() {

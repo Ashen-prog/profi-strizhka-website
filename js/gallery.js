@@ -250,11 +250,49 @@ let itemsPerLoad = 9;
 let currentFilter = "all";
 let itemsLoaded = 0;
 
-// Функция для определения скорости интернета
-function isInternetFast() {
-  return navigator.connection
-    ? navigator.connection.downlink > 1 // Скорость >1 Мбит/с считается быстрой
-    : true; // Если определить не удалось, считаем, что интернет быстрый
+// Модуль проверки скорости интернета
+function checkInternetSpeed(thresholdMbps = 2, cacheTimeMs = 60000) {
+  // Кэширование результата
+  if (!window.__internetSpeedCache) {
+    window.__internetSpeedCache = { value: null, timestamp: 0 };
+  }
+  const now = Date.now();
+  if (window.__internetSpeedCache.value !== null && now - window.__internetSpeedCache.timestamp < cacheTimeMs) {
+    return Promise.resolve(window.__internetSpeedCache.value);
+  }
+
+  // Проверка через navigator.connection
+  if (navigator.connection && typeof navigator.connection.downlink === "number") {
+    const isFast = navigator.connection.downlink > thresholdMbps;
+    window.__internetSpeedCache = { value: isFast, timestamp: now };
+    return Promise.resolve(isFast);
+  }
+
+  // Альтернативная проверка — загрузка маленького файла
+  return new Promise((resolve) => {
+    const img = new Image();
+    const start = Date.now();
+    let finished = false;
+    img.onload = img.onerror = function () {
+      if (finished) return;
+      finished = true;
+      const duration = Date.now() - start;
+      // 70KB файл, если загрузился за < 500мс — считаем быстро
+      const isFast = duration < 500;
+      window.__internetSpeedCache = { value: isFast, timestamp: Date.now() };
+      resolve(isFast);
+    };
+    // Используем небольшой файл (например, favicon или tiny png)
+    img.src = "img/gallery/1.jpg?speedtest=" + Math.random();
+    // Таймаут на случай зависания
+    setTimeout(() => {
+      if (!finished) {
+        finished = true;
+        window.__internetSpeedCache = { value: false, timestamp: Date.now() };
+        resolve(false);
+      }
+    }, 2000);
+  });
 }
 
 // Функция загрузки элементов
@@ -274,7 +312,7 @@ function loadItems(reset = false) {
     const gridItem = document.createElement("div");
     gridItem.className = "grid-item_gallery-section";
     gridItem.innerHTML = `
-            <img src="${item.imageSrc}" alt="Фото">
+            <img src="${item.imageSrc}" alt="Фото" loading="lazy">
     `;
     grid.appendChild(gridItem);
   });
@@ -297,14 +335,11 @@ document
     loadItems();
   });
 
-// Первоначальная загрузка
-if (isInternetFast()) {
-  itemsPerLoad = data.length; // Загружаем все элементы
-} else {
-  itemsPerLoad = 9; // Загружаем первые 9 элементов
-}
-
-loadItems();
+// Первоначальная загрузка с асинхронной проверкой скорости
+checkInternetSpeed(2).then((isFast) => {
+  itemsPerLoad = isFast ? data.length : 9;
+  loadItems();
+});
 
 //////////////////////////////// Модалка
 

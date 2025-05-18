@@ -57,12 +57,18 @@
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/script.js"></script>
     <script defer src="js/blog.js"></script>
-    <script
-      defer
-      type="text/javascript"
-      src="https://w995285.yclients.com/widgetJS"
-      charset="UTF-8"
-    ></script>
+    <script id="yclients-widget-loader"></script>
+    <script>
+      (function() {
+        var yclientsScript = document.createElement('script');
+        yclientsScript.type = 'text/javascript';
+        yclientsScript.async = true;
+        yclientsScript.charset = 'UTF-8';
+        yclientsScript.src = 'https://w995285.yclients.com/widgetJS';
+        var ref = document.getElementById('yclients-widget-loader');
+        ref.parentNode.insertBefore(yclientsScript, ref.nextSibling);
+      })();
+    </script>
   </head>
   <body>
     <header>
