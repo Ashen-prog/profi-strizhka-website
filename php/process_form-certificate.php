@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'libs/PHPMailer/src/Exception.php';
-require 'libs/PHPMailer/src/PHPMailer.php';
-require 'libs/PHPMailer/src/SMTP.php';
+require 'libs/PHPMailer-master/src/Exception.php';
+require 'libs/PHPMailer-master/src/PHPMailer.php';
+require 'libs/PHPMailer-master/src/SMTP.php';
 
 header('Content-Type: application/json');
 
@@ -12,6 +12,22 @@ header('Content-Type: application/json');
 $service = isset($_POST['service']) ? trim(htmlspecialchars($_POST['service'])) : '';
 $fio = isset($_POST['fio']) ? trim(htmlspecialchars($_POST['fio'])) : '';
 $tel = isset($_POST['tel']) ? trim(htmlspecialchars($_POST['tel'])) : '';
+$honeypot = isset($_POST['email_confirm']) ? trim($_POST['email_confirm']) : '';
+$ip = $_SERVER['REMOTE_ADDR'];
+
+// Honeypot: если поле заполнено — бот
+if (!empty($honeypot)) {
+    echo json_encode(['status' => 'error', 'message' => 'Обнаружен спам.']);
+    exit;
+}
+
+// Ограничение частоты отправки с одного IP (например, не чаще 1 раза в 30 секунд)
+session_start();
+if (isset($_SESSION['last_certificate_submit']) && time() - $_SESSION['last_certificate_submit'] < 30) {
+    echo json_encode(['status' => 'error', 'message' => 'Пожалуйста, подождите перед повторной отправкой.']);
+    exit;
+}
+$_SESSION['last_certificate_submit'] = time();
 
 // Проверка на заполненность
 if (empty($service) || empty($fio) || empty($tel)) {
