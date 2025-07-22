@@ -1,2 +1,65 @@
 
+# Конфиденциальные данные
+# PHP файлы с паролями и настройками SMTP
+php/process_form-*.php
+php/config.php
+php/settings.php
+
+# Файлы конфигурации с паролями
+*.env
+.env.local
+.env.production
+
+# Логи
+*.log
+logs/
+error_log
+
+# Временные файлы
+tmp/
+temp/
+cache/
+
+# Файлы операционной системы
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Файлы редактора
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Резервные копии
+*.bak
+*.backup
+*.old
+
+# Сессии PHP
+sess_*
+
+# Файлы загрузки
+uploads/
+user_uploads/
+
+# Composer
+vendor/
+composer.lock
+
+# Node.js (если используется)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Базы данных
+*.sqlite
+*.db
+
+# Сертификаты
+*.pem
+*.key
+*.crt
+
 .codegpt

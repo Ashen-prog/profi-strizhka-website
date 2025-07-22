@@ -1,0 +1,13 @@
+{
+  "minify": {
+    "css": {
+      "root": "${workspaceRoot}/css"
+    },
+    "minifyJS": true,
+    "minifyCSS": true,
+    "minifyHTML": true,
+    "JSfiles": [".js"],
+    "CSSfiles": [".css"],
+    "HTMLfiles": [".html"]
+  }
+}

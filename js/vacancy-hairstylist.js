@@ -103,7 +103,7 @@ submitButton.addEventListener("click", async function () {
 
   try {
     // Отправляем данные через fetch
-    const response = await fetch("process_form-vacancy.php", {
+    const response = await fetch("../php/process_form-vacancy.php", {
       method: "POST",
       body: formData,
     });

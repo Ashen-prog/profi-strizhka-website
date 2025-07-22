@@ -335,7 +335,7 @@ document
 
     try {
       // Отправляем данные через fetch
-      const response = await fetch("process_form-reviews.php", {
+      const response = await fetch("../php/process_form-reviews.php", {
         method: "POST",
         body: formData,
       });

@@ -97,7 +97,7 @@ submitButton.addEventListener("click", async () => {
 
   try {
     // Отправляем данные через fetch
-    const response = await fetch("process_form-certificate.php", {
+    const response = await fetch("../php/process_form-certificate.php", {
       method: "POST",
       body: formData,
     });
