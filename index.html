@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -14,18 +14,20 @@
     />
     <link rel="canonical" href="https://profi-strizhka.ru/" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/modern-sections.css" />
     <script defer src="js/script.js"></script>
     <script defer src="js/main.js"></script>
+    <script defer src="js/modern-sections.js"></script>
     <script defer src="js/vacancy.js"></script>
     <script id="yclients-widget-loader"></script>
     <script>
       (function () {
-        var yclientsScript = document.createElement("script");
-        yclientsScript.type = "text/javascript";
+        var yclientsScript = document.createElement('script');
+        yclientsScript.type = 'text/javascript';
         yclientsScript.async = true;
-        yclientsScript.charset = "UTF-8";
-        yclientsScript.src = "https://w995285.yclients.com/widgetJS";
-        var ref = document.getElementById("yclients-widget-loader");
+        yclientsScript.charset = 'UTF-8';
+        yclientsScript.src = 'https://w995285.yclients.com/widgetJS';
+        var ref = document.getElementById('yclients-widget-loader');
         ref.parentNode.insertBefore(yclientsScript, ref.nextSibling);
       })();
     </script>
@@ -43,20 +45,14 @@
             return;
           }
         }
-        (k = e.createElement(t)),
+        ((k = e.createElement(t)),
           (a = e.getElementsByTagName(t)[0]),
           (k.async = 1),
           (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        "script",
-        "https://mc.yandex.ru/metrika/tag.js",
-        "ym"
-      );
+          a.parentNode.insertBefore(k, a));
+      })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
 
-      ym(99649572, "init", {
+      ym(99649572, 'init', {
         clickmap: true,
         trackLinks: true,
         accurateTrackBounce: true,
@@ -122,12 +118,8 @@
                 src="img/menu-services-dropdown_logo.svg"
                 alt="logo"
               />
-              <div class="menu-services-dropdown_title">
-                Парикмахерские услуги
-              </div>
-              <div class="menu-services-dropdown_text">
-                Уникальность и индивидуальность
-              </div>
+              <div class="menu-services-dropdown_title">Парикмахерские услуги</div>
+              <div class="menu-services-dropdown_text">Уникальность и индивидуальность</div>
               <button class="menu-services-dropdown_btn">Смотреть</button>
             </div>
           </div>
@@ -141,9 +133,7 @@
           <div class="menu-services-dropdown_item_container">
             <div class="menu-services-dropdown_item" id="menu_brow">
               <div class="menu-services-dropdown_title">Брови</div>
-              <div class="menu-services-dropdown_text">
-                Выразительно и гармонично
-              </div>
+              <div class="menu-services-dropdown_text">Выразительно и гармонично</div>
               <button class="menu-services-dropdown_btn">Смотреть</button>
             </div>
           </div>
@@ -155,17 +145,11 @@
             <img class="under-header_vk" src="img/vk-ru.svg" alt="VK" loading="lazy" />
             <img class="under-header_inst" src="img/inst.svg" alt="inst" loading="lazy" />
           </div>
-          <button class="under-header_online-registration-btn">
-            Онлайн запись
-          </button>
+          <button class="under-header_online-registration-btn">Онлайн запись</button>
         </div>
       </div>
       <div class="vector-container">
-        <img
-          class="vector"
-          src="img/vector.svg"
-          alt="Делаем людей красивыми 8 лет"
-        />
+        <img class="vector" src="img/vector.svg" alt="Делаем людей красивыми 8 лет" />
       </div>
     </header>
 
@@ -173,122 +157,432 @@
       <div class="main-banner">
         <h1>ПРОФИ Стрижка — сеть салонов красоты в Саратове</h1>
         <p>
-          Делаем людей красивыми уже 8 лет. Оцените качество услуг, доверив свою
-          красоту профессионалам.
+          Делаем людей красивыми уже 8 лет. Оцените качество услуг, доверив свою красоту
+          профессионалам.
         </p>
       </div>
       <div class="content">
         <section class="services-preview reveal">
           <h2>Наши услуги</h2>
-          <div class="services-grid">
-            <div class="service-item">
-              <img src="img/gallery/1.jpg" alt="Стрижки" loading="lazy" />
-              <h3>Стрижки</h3>
-              <p>Идеальная стрижка для мужчин и женщин любого возраста.</p>
+          <div class="services-grid services-grid-modern">
+            <div class="service-item service-card-modern" data-service="hair">
+              <div class="service-card-image">
+                <img src="img/gallery/1.jpg" alt="Стрижки" loading="lazy" />
+              </div>
+              <div class="service-card-content">
+                <h3>Стрижки</h3>
+                <p>Идеальная стрижка для мужчин и женщин любого возраста.</p>
+                <div class="service-features">
+                  <span class="feature-tag">Мужские</span>
+                  <span class="feature-tag">Женские</span>
+                  <span class="feature-tag">Детские</span>
+                </div>
+                <div class="service-price">от 300₽</div>
+              </div>
             </div>
-            <div class="service-item">
-              <img src="img/gallery/2.jpg" alt="Маникюр" loading="lazy" />
-              <h3>Маникюр</h3>
-              <p>Профессиональный уход и стильный дизайн ногтей.</p>
+            <div class="service-item service-card-modern" data-service="nails">
+              <div class="service-card-image">
+                <img src="img/gallery/2.jpg" alt="Маникюр" loading="lazy" />
+              </div>
+              <div class="service-card-content">
+                <h3>Маникюр</h3>
+                <p>Профессиональный уход и стильный дизайн ногтей.</p>
+                <div class="service-features">
+                  <span class="feature-tag">Классический</span>
+                  <span class="feature-tag">Аппаратный</span>
+                  <span class="feature-tag">Дизайн</span>
+                </div>
+                <div class="service-price">от 500₽</div>
+              </div>
             </div>
-            <div class="service-item">
-              <img src="img/gallery/9.jpg" alt="Окрашивание" loading="lazy" />
-              <h3>Окрашивания</h3>
-              <p>Индивидуальный подход к созданию вашего уникального цвета.</p>
+            <div class="service-item service-card-modern" data-service="coloring">
+              <div class="service-card-image">
+                <img src="img/gallery/9.jpg" alt="Окрашивание" loading="lazy" />
+              </div>
+              <div class="service-card-content">
+                <h3>Окрашивания</h3>
+                <p>Индивидуальный подход к созданию вашего уникального цвета.</p>
+                <div class="service-features">
+                  <span class="feature-tag">Тонирование</span>
+                  <span class="feature-tag">Мелирование</span>
+                  <span class="feature-tag">Балаяж</span>
+                </div>
+                <div class="service-price">от 1400₽</div>
+              </div>
             </div>
           </div>
           <a href="/price.html" class="services-link">Смотреть все услуги</a>
         </section>
 
-        <section class="testimonials reveal">
-          <h2>Отзывы</h2>
-          <p>Мы гордимся доверием наших клиентов. Вот что они говорят:</p>
-          <div class="testimonial-container">
-            <div class="testimonial active">
-              <p>
-                "Изумительно подстригли и покрасили. Цены очень приемлемые, всем
-                советую. Администратору отдельная благодарность!!! Приняли
-                быстро и без записи - очень гостеприимный персонал!"
-              </p>
-              <span>- Ангелина Суворова</span>
+        <section class="testimonials reveal testimonials-modern">
+          <div class="content">
+            <h2>Отзывы</h2>
+            <div class="testimonials-slider-modern">
+              <div class="testimonial-container-modern">
+                <div class="testimonial-card active" data-testimonial="1">
+                  <div class="testimonial-rating">
+                    <div class="stars">
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                    </div>
+                    <span class="rating-text">5.0</span>
+                  </div>
+                  <p class="testimonial-text">
+                    "Спасибо огромное мастеру маникюра Веронике за ее профессионализм и чуткое и
+                    внимательное отношение к клиентам. Посещаю салон уже несколько лет и очень
+                    довольна вашим внимательным отношением к клиентам."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">
+                      <img src="img/yandex.svg" alt="Ирина Агаева" />
+                    </div>
+                    <div class="author-info">
+                      <h4>Ирина Агаева</h4>
+                    </div>
+                    <div class="testimonial-source">
+                      <span>Яндекс Карты</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card" data-testimonial="2">
+                  <div class="testimonial-rating">
+                    <div class="stars">
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                    </div>
+                    <span class="rating-text">5.0</span>
+                  </div>
+                  <p class="testimonial-text">
+                    "Делала маникюр здесь первый раз. Очень всем довольна от обслуживания до работы
+                    самого мастера. Большое спасибо мастеру маникюра Елене, сделала всё аккуратно,
+                    быстро."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">
+                      <img src="img/2gis.svg" alt="Борисова Екатерина Сергеевна" />
+                    </div>
+                    <div class="author-info">
+                      <h4>Борисова Екатерина Сергеевна</h4>
+                    </div>
+                    <div class="testimonial-source">
+                      <span>2ГИС</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card" data-testimonial="3">
+                  <div class="testimonial-rating">
+                    <div class="stars">
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                    </div>
+                    <span class="rating-text">5.0</span>
+                  </div>
+                  <p class="testimonial-text">
+                    "Классная стрижка за недорогую цену! Стригся до этого в барбершопе есть с чем
+                    сравнить! Очень удивили прекрасным качеством! Мастер Оксана прекрасный
+                    специалист!"
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">
+                      <img src="img/2gis.svg" alt="Владислав Коробов" />
+                    </div>
+                    <div class="author-info">
+                      <h4>Владислав Коробов</h4>
+                    </div>
+                    <div class="testimonial-source">
+                      <span>2ГИС</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card" data-testimonial="4">
+                  <div class="testimonial-rating">
+                    <div class="stars">
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                    </div>
+                    <span class="rating-text">5.0</span>
+                  </div>
+                  <p class="testimonial-text">
+                    "Цены адекватные, персонал приветливый, администратор Марина всегда заботливо
+                    предложит кофе. На ногтях мой выбор - Алина, волосы доверяю только Арине."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">
+                      <img src="img/yandex.svg" alt="Наталия А." />
+                    </div>
+                    <div class="author-info">
+                      <h4>Наталия А.</h4>
+                    </div>
+                    <div class="testimonial-source">
+                      <span>Яндекс Карты</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card" data-testimonial="5">
+                  <div class="testimonial-rating">
+                    <div class="stars">
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                    </div>
+                    <span class="rating-text">5.0</span>
+                  </div>
+                  <p class="testimonial-text">
+                    "Безумно приятный салон и его атмосфера! Персонал максимально вежливый и
+                    трепетный. Хожу на маникюр уже давно. Нашла своего идеального мастера Юлю."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">
+                      <img src="img/yandex.svg" alt="Роза" />
+                    </div>
+                    <div class="author-info">
+                      <h4>Роза</h4>
+                    </div>
+                    <div class="testimonial-source">
+                      <span>Яндекс Карты</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card" data-testimonial="6">
+                  <div class="testimonial-rating">
+                    <div class="stars">
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                      <span class="star">⭐</span>
+                    </div>
+                    <span class="rating-text">5.0</span>
+                  </div>
+                  <p class="testimonial-text">
+                    "Я постоянный клиент, очень нравится работа мастеров. Маникюр я делаю у Елены,
+                    профессиональный мастер, подскажет как красиво оформить дизайн ногтей."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">
+                      <img src="img/yandex.svg" alt="Надежда Г." />
+                    </div>
+                    <div class="author-info">
+                      <h4>Надежда Г.</h4>
+                    </div>
+                    <div class="testimonial-source">
+                      <span>Яндекс Карты</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonials-navigation">
+                <button
+                  class="testimonials-nav-btn testimonials-nav-btn--prev"
+                  aria-label="Предыдущий отзыв"
+                >
+                  ‹
+                </button>
+                <div class="testimonials-dots">
+                  <span class="dot active" data-slide="1"></span>
+                  <span class="dot" data-slide="2"></span>
+                  <span class="dot" data-slide="3"></span>
+                  <span class="dot" data-slide="4"></span>
+                  <span class="dot" data-slide="5"></span>
+                  <span class="dot" data-slide="6"></span>
+                </div>
+                <button
+                  class="testimonials-nav-btn testimonials-nav-btn--next"
+                  aria-label="Следующий отзыв"
+                >
+                  ›
+                </button>
+              </div>
             </div>
+
+            <div class="testimonials-stats">
+              <div class="stat">
+                <div class="stat__number">10,000+</div>
+                <div class="stat__label">Довольных клиентов</div>
+              </div>
+              <div class="stat">
+                <div class="stat__number">4.7</div>
+                <div class="stat__label">Средняя оценка</div>
+              </div>
+              <div class="stat">
+                <div class="stat__number">500+</div>
+                <div class="stat__label">Отзывов</div>
+              </div>
+            </div>
+            <a href="/reviews.html" class="testimonials-link">Читать больше отзывов</a>
           </div>
-          <a href="/reviews.html" class="testimonials-link"
-            >Читать больше отзывов</a
-          >
         </section>
 
         <!-- Галерея -->
-        <section class="gallery-preview reveal">
-          <h2>Галерея</h2>
-          <p>
-            Оцените качество наших работ. Посмотрите, как мы помогаем раскрыть
-            красоту наших клиентов.
-          </p>
-          <div class="gallery-preview-grid">
-            <div class="gallery-preview-item">
-              <img
-                src="img/gallery/12.jpg"
-                alt="Работа мастера"
-                loading="lazy"
-              />
+        <section class="gallery-preview reveal gallery-modern">
+          <div class="content">
+            <h2>Галерея</h2>
+
+            <div class="gallery-filters">
+              <button class="filter-btn active" data-filter="all">Все</button>
+              <button class="filter-btn" data-filter="female">Женские</button>
+              <button class="filter-btn" data-filter="male">Мужские</button>
+              <button class="filter-btn" data-filter="coloration">Окрашивание</button>
+              <button class="filter-btn" data-filter="styling">Укладка</button>
+              <button class="filter-btn" data-filter="nails">Маникюр</button>
+              <button class="filter-btn" data-filter="brows">Брови</button>
             </div>
-            <div class="gallery-preview-item">
-              <img
-                src="img/gallery/4.jpg"
-                alt="Работа мастера"
-                loading="lazy"
-              />
-            </div>
-            <div class="gallery-preview-item">
-              <img
-                src="img/gallery/7.jpg"
-                alt="Работа мастера"
-                loading="lazy"
-              />
+
+            <div class="gallery-masonry">
+              <!-- Элементы галереи будут загружены динамически через JavaScript -->
             </div>
           </div>
-          <a href="/gallery.html" class="gallery-preview-link"
-            >Смотреть всю галерею</a
-          >
+
+          <a href="/gallery.html" class="gallery-preview-link">Смотреть всю галерею</a>
         </section>
 
         <!-- Салоны -->
-        <section class="salons-preview reveal">
-          <h2>Салоны</h2>
-          <p>
-            Найдите ближайший салон и оцените наш сервис в удобном для вас
-            месте.
-          </p>
-          <div class="salons-grid">
-            <div class="salon-item">
-              <h3>Центральный</h3>
-              <p>
-                Адрес: <br />
-                ул. Московская, 134/146
+        <section class="salons-preview reveal salons-modern">
+          <div class="content">
+            <div class="section-header">
+              <h2>Салоны</h2>
+              <p class="section-description">
+                Найдите ближайший салон и оцените наш сервис в удобном для вас месте.
               </p>
-              <p>тел: +7(902)048-55-44</p>
-              <p>ежедневно 09:00-20:00</p>
             </div>
-            <div class="salon-item">
-              <h3>Салон на СХИ</h3>
-              <p>
-                Адрес: <br />
-                ул. им. ак. Навашина С.Г. , 1/13
-              </p>
-              <p>тел: +7(953)634-50-30</p>
-              <p>ежедневно 09:00-20:00</p>
-            </div>
-            <div class="salon-item">
-              <h3>Салон на 3 Дачной</h3>
-              <p>
-                Адрес: <br />
-                пр. им. 50 лет Октября, 120
-              </p>
-              <p>тел: +7(958)674-96-77</p>
-              <p>ежедневно 09:00-20:00</p>
+
+            <div class="salons-grid salons-grid-modern">
+              <div class="salon-card salon-card-modern">
+                <div class="salon-card-header">
+                  <h3>Центральный</h3>
+                  <div class="salon-status salon-status-open">Открыт</div>
+                </div>
+
+                <div class="salon-info">
+                  <div class="salon-address">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                      <span class="info-label">Адрес:</span>
+                      <span class="info-value">ул. Московская, 134/146</span>
+                    </div>
+                  </div>
+
+                  <div class="salon-phone">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                      <span class="info-label">Телефон:</span>
+                      <a href="tel:+79020485544" class="info-value phone-link">+7(902)048-55-44</a>
+                    </div>
+                  </div>
+
+                  <div class="salon-hours">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-content">
+                      <span class="info-label">Время работы:</span>
+                      <span class="info-value">ежедневно 09:00-20:00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salon-actions">
+                  <button class="salon-btn salon-btn-primary">Записаться</button>
+                  <button class="salon-btn salon-btn-secondary">На карте</button>
+                </div>
+              </div>
+
+              <div class="salon-card salon-card-modern">
+                <div class="salon-card-header">
+                  <h3>Салон на СХИ</h3>
+                  <div class="salon-status salon-status-open">Открыт</div>
+                </div>
+
+                <div class="salon-info">
+                  <div class="salon-address">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                      <span class="info-label">Адрес:</span>
+                      <span class="info-value">ул. им. ак. Навашина С.Г., 1/13</span>
+                    </div>
+                  </div>
+
+                  <div class="salon-phone">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                      <span class="info-label">Телефон:</span>
+                      <a href="tel:+79536345030" class="info-value phone-link">+7(953)634-50-30</a>
+                    </div>
+                  </div>
+
+                  <div class="salon-hours">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-content">
+                      <span class="info-label">Время работы:</span>
+                      <span class="info-value">ежедневно 09:00-20:00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salon-actions">
+                  <button class="salon-btn salon-btn-primary">Записаться</button>
+                  <button class="salon-btn salon-btn-secondary">На карте</button>
+                </div>
+              </div>
+
+              <div class="salon-card salon-card-modern">
+                <div class="salon-card-header">
+                  <h3>Салон на 3 Дачной</h3>
+                  <div class="salon-status salon-status-open">Открыт</div>
+                </div>
+
+                <div class="salon-info">
+                  <div class="salon-address">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                      <span class="info-label">Адрес:</span>
+                      <span class="info-value">пр. им. 50 лет Октября, 120</span>
+                    </div>
+                  </div>
+
+                  <div class="salon-phone">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                      <span class="info-label">Телефон:</span>
+                      <a href="tel:+79586749677" class="info-value phone-link">+7(958)674-96-77</a>
+                    </div>
+                  </div>
+
+                  <div class="salon-hours">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-content">
+                      <span class="info-label">Время работы:</span>
+                      <span class="info-value">ежедневно 09:00-20:00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salon-actions">
+                  <button class="salon-btn salon-btn-primary">Записаться</button>
+                  <button class="salon-btn salon-btn-secondary">На карте</button>
+                </div>
+              </div>
             </div>
           </div>
+
           <a href="/salons.html" class="salons-preview-link">Все салоны</a>
         </section>
 
@@ -296,31 +590,24 @@
         <section class="blog-preview reveal">
           <h2>Блог</h2>
           <p>
-            Читайте советы наших экспертов, узнавайте о новых трендах и находите
-            вдохновение для своего образа.
+            Читайте советы наших экспертов, узнавайте о новых трендах и находите вдохновение для
+            своего образа.
           </p>
           <div class="blog-preview-container">
             <article class="blog-preview-item">
               <img src="img/blog/1.jpg" alt="Пример статьи" loading="lazy" />
               <h3>Как подобрать идеальное средство для укладки волос</h3>
               <p>
-                Узнайте, какие критерии помогут вам сделать правильный выбор и
-                сохранить идеальную прическу на протяжении всего дня....
+                Узнайте, какие критерии помогут вам сделать правильный выбор и сохранить идеальную
+                прическу на протяжении всего дня....
               </p>
-              <a href="/blog-article-1.html" class="blog-read-more"
-                >Читать далее</a
-              >
+              <a href="/blog-article-1.html" class="blog-read-more">Читать далее</a>
             </article>
             <article class="blog-preview-item">
               <img src="img/blog/2.jpg" alt="Пример статьи" loading="lazy" />
               <h3>Уход за окрашенными волосами</h3>
-              <p>
-                Сохраните яркость цвета и здоровье волос с помощью наших
-                советов...
-              </p>
-              <a href="/blog-article-2.html" class="blog-read-more"
-                >Читать далее</a
-              >
+              <p>Сохраните яркость цвета и здоровье волос с помощью наших советов...</p>
+              <a href="/blog-article-2.html" class="blog-read-more">Читать далее</a>
             </article>
           </div>
           <a href="/blog.html" class="blog-preview-link">Все статьи в блоге</a>
@@ -330,31 +617,24 @@
         <section class="vacancies-preview reveal">
           <h2>Вакансии</h2>
           <p>
-            Присоединяйтесь к нашей команде профессионалов. Мы всегда рады
-            талантливым мастерам.
+            Присоединяйтесь к нашей команде профессионалов. Мы всегда рады талантливым мастерам.
           </p>
           <div class="vacancies-grid" id="grid_vacancy-section">
             <!-- Элементы будут загружаться здесь динамически через vacancy.js -->
           </div>
-          <a href="/vacancy.html" class="vacancies-preview-link"
-            >Все вакансии</a
-          >
+          <a href="/vacancy.html" class="vacancies-preview-link">Все вакансии</a>
         </section>
 
         <!-- Подарочные сертификаты -->
         <section class="gift-certificates-preview reveal">
           <h2>Подарочные сертификаты</h2>
           <p>
-            Порадуйте близких подарком красоты и расслабления. Приобретите
-            подарочный сертификат на услуги нашего салона.
+            Порадуйте близких подарком красоты и расслабления. Приобретите подарочный сертификат на
+            услуги нашего салона.
           </p>
           <div class="gift-certificates-grid">
             <div class="gift-certificate-item">
-              <img
-                src="img/sert1000.webp"
-                alt="Подарочный сертификат"
-                loading="lazy"
-              />
+              <img src="img/sert1000.webp" alt="Подарочный сертификат" loading="lazy" />
               <div class="gift-certificate-info">
                 <h3>Сертификат на 1000</h3>
                 <p>Отличный подарок для тех, кто ценит стиль и качество.</p>
@@ -362,11 +642,7 @@
               </div>
             </div>
             <div class="gift-certificate-item">
-              <img
-                src="img/sert1000.webp"
-                alt="Подарочный сертификат"
-                loading="lazy"
-              />
+              <img src="img/sert1000.webp" alt="Подарочный сертификат" loading="lazy" />
               <div class="gift-certificate-info">
                 <h3>Сертификат на 1500</h3>
                 <p>Подарите вашим близким возможность обновить свой образ.</p>
@@ -374,17 +650,10 @@
               </div>
             </div>
             <div class="gift-certificate-item">
-              <img
-                src="img/sert1000.webp"
-                alt="Подарочный сертификат"
-                loading="lazy"
-              />
+              <img src="img/sert1000.webp" alt="Подарочный сертификат" loading="lazy" />
               <div class="gift-certificate-info">
                 <h3>Сертификат на 2000</h3>
-                <p>
-                  Позвольте вашим близким ощутить заботу и профессиональный
-                  подход.
-                </p>
+                <p>Позвольте вашим близким ощутить заботу и профессиональный подход.</p>
               </div>
             </div>
           </div>
@@ -416,9 +685,7 @@
               target="_blank"
               >Онлайн запись</a
             >
-            <button class="footer_online-registration-btn_mobile">
-              Записаться
-            </button>
+            <button class="footer_online-registration-btn_mobile">Записаться</button>
           </div>
         </div>
       </div>
@@ -428,12 +695,8 @@
             <div class="middle-footer-flex">
               <div class="middle-footer-flex-item">
                 <img class="footer-logo" src="img/footer-logo.svg" alt="logo" loading="lazy" />
-                <div class="copyright">
-                  © 2016-2024 Профи-стрижка™. Все права защищены
-                </div>
-                <a class="site-doument-link" href="/documents.html"
-                  >Документы сайта</a
-                >
+                <div class="copyright">© 2016-2024 Профи-стрижка™. Все права защищены</div>
+                <a class="site-doument-link" href="/documents.html">Документы сайта</a>
               </div>
               <div class="middle-footer-flex-item">
                 <div class="middle-footer-flex-item_nav-tilte">Услуги</div>
@@ -475,19 +738,11 @@
               </div>
             </div>
             <div class="middle-footer-contacts">
-              <a class="footer_tel" href="tel:+79518814884"
-                >+7 (951) 881-48-84</a
-              >
-              <a class="footer_email" href="mailto:cirulnik64@mail.ru"
-                >Email: cirulnik64@mail.ru</a
-              >
+              <a class="footer_tel" href="tel:+79518814884">+7 (951) 881-48-84</a>
+              <a class="footer_email" href="mailto:cirulnik64@mail.ru">Email: cirulnik64@mail.ru</a>
               <div class="footer_social-networks">
                 <img class="footer_tg" src="img/footer-tg.svg" alt="Telegram" loading="lazy" />
-                <img
-                  class="footer_inst"
-                  src="img/footer-inst.svg"
-                  alt="Instagram"
-                />
+                <img class="footer_inst" src="img/footer-inst.svg" alt="Instagram" />
                 <img class="footer_vk" src="img/footer-vk.svg" alt="VK" loading="lazy" />
               </div>
             </div>
@@ -502,43 +757,33 @@
               <img class="footer-logo" src="img/footer-logo.svg" alt="logo" />
               <div class="footer_social-networks">
                 <img class="footer_tg" src="img/footer-tg.svg" alt="Telegram" />
-                <img
-                  class="footer_inst"
-                  src="img/footer-inst.svg"
-                  alt="Instagram"
-                />
+                <img class="footer_inst" src="img/footer-inst.svg" alt="Instagram" />
                 <img class="footer_vk" src="img/footer-vk.svg" alt="VK" />
               </div>
             </div>
             <a class="footer_tel" href="tel:+79518814884">+7 (951) 881-48-84</a>
-            <a class="footer_email" href="mailto:cirulnik64@mail.ru"
-              >Email: cirulnik64@mail.ru</a
-            >
+            <a class="footer_email" href="mailto:cirulnik64@mail.ru">Email: cirulnik64@mail.ru</a>
             <div class="footer-nav_mobile">
               <div class="middle-footer-flex-item">
                 <div class="middle-footer-flex-item_nav-tilte">Услуги</div>
                 <ul class="middle-footer-flex-item_nav-services">
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
-                      href="/price.html#hair"
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a href="/price.html#hair"
                       >Парикмахерский зал</a
                     >
                   </li>
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
-                      href="/price.html#nail"
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a href="/price.html#nail"
                       >Маникюрный зал</a
                     >
                   </li>
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
-                      href="/price.html#brow"
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a href="/price.html#brow"
                       >Брови</a
                     >
                   </li>
                   <li>
-                    <img src="img/arrow-right-1.svg" alt="arrow" /><a
-                      href="/price.html"
+                    <img src="img/arrow-right-1.svg" alt="arrow" /><a href="/price.html"
                       >Все услуги</a
                     >
                   </li>
@@ -555,12 +800,8 @@
                 </ul>
               </div>
             </div>
-            <div class="copyright">
-              © 2016-2024 Профи-стрижка™. Все права защищены
-            </div>
-            <a class="site-doument-link" href="/documents.html"
-              >Документы сайта</a
-            >
+            <div class="copyright">© 2016-2024 Профи-стрижка™. Все права защищены</div>
+            <a class="site-doument-link" href="/documents.html">Документы сайта</a>
             <img
               class="footer_payments-mobile"
               src="img/footer-payments_mobile.svg"
@@ -572,20 +813,15 @@
 
       <div class="content">
         <div class="lower-footer">
-          <img
-            class="footer_payments"
-            src="img/footer-payments.svg"
-            alt="Payments"
-          />
+          <img class="footer_payments" src="img/footer-payments.svg" alt="Payments" />
           <div class="lower-footer_cookies">
-            Используем cookies для корректной работы сайта и других целей,
-            предусмотренных политикой обработки персональных данных.
+            Используем cookies для корректной работы сайта и других целей, предусмотренных политикой
+            обработки персональных данных.
           </div>
           <div class="legal-notice">
-            Данный сайт носит информационно-справочный характер и ни при каких
-            условиях не является публичной офертой, определяемой положениями
-            статей 435, 437 Гражданского Кодекса РФ. Подробную информацию
-            уточняйте у администраторов
+            Данный сайт носит информационно-справочный характер и ни при каких условиях не является
+            публичной офертой, определяемой положениями статей 435, 437 Гражданского Кодекса РФ.
+            Подробную информацию уточняйте у администраторов
           </div>
         </div>
       </div>

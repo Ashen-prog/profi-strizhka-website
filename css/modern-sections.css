@@ -1,0 +1,921 @@
+/* Современные стили для улучшенных секций */
+
+/* Базовые стили для заголовков */
+.services-preview h2,
+.testimonials h2,
+.gallery-preview h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 2rem;
+}
+
+/* Стили для современных карточек услуг */
+.services-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.service-card-modern {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  transform: translateY(0);
+}
+
+.service-card-modern:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(237, 75, 88, 0.2);
+  border: 1px solid rgba(237, 75, 88, 0.1);
+}
+
+.service-card-modern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(237, 75, 88, 0.05) 0%, rgba(237, 75, 88, 0.02) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-card-modern:hover::before {
+  opacity: 1;
+}
+
+.service-card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16/9;
+}
+
+.service-card-modern:hover .service-card-image {
+  transform: scale(1.02);
+}
+
+.service-card-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(237, 75, 88, 0.1) 0%, rgba(237, 75, 88, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+}
+
+.service-card-modern:hover .service-card-image::after {
+  opacity: 1;
+}
+
+.service-card-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.3) 25%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 50%,
+    transparent 75%,
+    rgba(255, 255, 255, 0.3) 75%
+  );
+  background-size: 20px 20px;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.service-card-modern:hover .service-card-image img {
+  transform: scale(1.05);
+}
+
+.service-card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.service-card-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.service-card-modern:hover .service-card-content h3 {
+  color: #ed4b58;
+  transform: translateY(-2px);
+}
+
+.service-card-content p {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.service-card-modern:hover .service-card-content p {
+  color: #555;
+}
+
+.service-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-tag {
+  padding: 0.25rem 0.75rem;
+  background: #f5f5f5;
+  color: #666;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.service-card-modern:hover .feature-tag {
+  background: rgba(237, 75, 88, 0.1);
+  color: #ed4b58;
+  transform: translateY(-1px);
+}
+
+.service-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ed4b58;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.service-card-modern:hover .service-price {
+  transform: scale(1.05);
+  text-shadow: 0 2px 4px rgba(237, 75, 88, 0.2);
+}
+
+/* Стили для современной секции отзывов */
+.testimonials-modern {
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  padding: 4rem 0;
+}
+
+.testimonials-slider-modern {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial-container-modern {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card.active {
+  display: block;
+  animation: fadeInUp 0.6s ease;
+}
+
+.testimonial-rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star {
+  font-size: 1.2rem;
+}
+
+.rating-text {
+  font-weight: 700;
+  color: #2c2c2c;
+  background: linear-gradient(135deg, #ed4b58, #f4d03f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ed4b58;
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0 0 0.25rem 0;
+}
+
+.author-info p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.testimonial-source {
+  margin-left: auto;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.testimonials-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.testimonials-nav-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: #ed4b58;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonials-nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: #ed4b58;
+  color: white;
+}
+
+.testimonials-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #ed4b58;
+  transform: scale(1.2);
+}
+
+.testimonials-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ed4b58, #f4d03f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Стили для современной галереи */
+.gallery-modern {
+  padding: 4rem 0;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #ddd;
+  background: white;
+  color: #666;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  border-color: #ed4b58;
+  background: #ed4b58;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  gap: 1.5rem;
+}
+
+/* Ограничиваем максимум 3 колонки */
+@media (min-width: 769px) {
+  .gallery-masonry {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Планшеты - 2 колонки */
+@media (min-width: 481px) and (max-width: 768px) {
+  .gallery-masonry {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .gallery-item-image img {
+    height: 180px;
+  }
+}
+
+.gallery-item {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.gallery-item-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.gallery-item:hover .gallery-item-image img {
+  transform: scale(1.05);
+}
+
+/* Добавляем overlay эффект */
+.gallery-item-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(237, 75, 88, 0);
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-item-image::before {
+  background: rgba(237, 75, 88, 0.1);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(237, 75, 88, 0.9), rgba(244, 208, 63, 0.7));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-info {
+  color: white;
+}
+
+.gallery-item-info h4 {
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.gallery-item-info p {
+  opacity: 0.9;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.gallery-item-zoom {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.gallery-item-zoom:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  43% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .services-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card-modern {
+    min-height: 380px;
+  }
+
+  .service-card-content {
+    min-height: 180px;
+  }
+
+  .service-card-image {
+    height: 180px;
+  }
+
+  .testimonials-stats {
+    gap: 2rem;
+  }
+
+  .gallery-masonry {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .gallery-item-image img {
+    height: 150px;
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .testimonials-navigation {
+    gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .service-card-content {
+    padding: 1rem;
+  }
+
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Исправление проблем с загрузкой изображений */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.service-card-image img,
+.gallery-item-image img {
+  opacity: 1;
+  transition: none;
+}
+
+/* Предотвращение мерцания изображений */
+.service-card-image,
+.gallery-item-image {
+  background-color: #f8f9fa;
+}
+
+/* Стили для статистики отзывов */
+.testimonials-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin: 3rem 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat__number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ed4b58;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.stat__label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .testimonials-stats {
+    gap: 2rem;
+  }
+
+  .stat__number {
+    font-size: 2rem;
+  }
+}
+
+/* Стили для современной секции салонов */
+.salons-modern {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 4rem 0;
+}
+
+.salons-modern .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.salons-modern .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.salons-modern .section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 1rem;
+}
+
+.salons-modern .section-description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.salons-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.salon-card-modern {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.salon-card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.salon-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.salon-card-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.salon-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.salon-status-open {
+  background: #d4edda;
+  color: #155724;
+}
+
+.salon-status-closing {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.salon-status-closed {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.salon-info {
+  margin-bottom: 2rem;
+}
+
+.salon-address,
+.salon-phone,
+.salon-hours {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+.salon-address:hover,
+.salon-phone:hover,
+.salon-hours:hover {
+  background: #e9ecef;
+}
+
+.info-icon {
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+  margin-top: 0.1rem;
+  min-width: 20px;
+}
+
+.info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.phone-link {
+  color: #ed4b58;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.phone-link:hover {
+  color: #d63344;
+  text-decoration: underline;
+}
+
+.salon-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.salon-btn {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.salon-btn-primary {
+  background: #ed4b58;
+  color: white;
+}
+
+.salon-btn-primary:hover {
+  background: #d63344;
+  transform: translateY(-2px);
+}
+
+.salon-btn-secondary {
+  background: transparent;
+  color: #ed4b58;
+  border: 2px solid #ed4b58;
+}
+
+.salon-btn-secondary:hover {
+  background: #ed4b58;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.salons-preview-link {
+  display: block !important;
+  text-align: center;
+  padding: 1rem 2rem;
+  background: #ed4b58 !important;
+  color: white !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.salons-preview-link:hover {
+  background: #d63344 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(237, 75, 88, 0.3);
+}
+
+@media (max-width: 768px) {
+  .salons-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .salon-card-modern {
+    padding: 1.5rem;
+  }
+
+  .salon-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .salon-actions {
+    flex-direction: column;
+  }
+
+  .salons-modern .section-header h2 {
+    font-size: 2rem;
+  }
+}
