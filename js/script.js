@@ -113,56 +113,76 @@ const stylingLink = document.querySelectorAll("#menu_styling");
 const browLink = document.querySelectorAll("#menu_brow");
 const colorationLink = document.querySelectorAll("#menu_coloration");
 
+// Функция для принудительного вызова логики price.js
+function forceNavigateToPrice(targetHash) {
+  const currentPath = window.location.pathname;
+  const currentHash = window.location.hash.slice(1);
+  
+  if (currentPath.includes('price.html') && currentHash === targetHash) {
+    // Мы уже на price.html с нужным хэшем - принудительно вызываем функцию
+    if (window.checkHashAndOpenSection) {
+      window.checkHashAndOpenSection();
+    } else {
+      // Если функция не в глобальной области - перезагружаем страницу
+      window.location.reload();
+    }
+  } else {
+    // Обычный переход
+    window.location.href = `/price.html#${targetHash}`;
+  }
+}
+
 // "Парикмахерские" (hair)
 hairLink.forEach((item) => {
-  item.addEventListener("click", () => {
-    window.location.href = "/price.html#hair";
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    forceNavigateToPrice('hair');
   });
 });
 
 // "Ногтевой" (nail)
 nailLink.forEach((item) => {
-  item.addEventListener("click", () => {
-    window.location.href = "/price.html#nail";
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    forceNavigateToPrice('nail');
   });
 });
 
 // "Брови" (brow)
 browLink.forEach((item) => {
-  item.addEventListener("click", () => {
-    window.location.href = "/price.html#brow";
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    forceNavigateToPrice('brow');
   });
 });
 
 // "Стайлинг" (styling)
 stylingLink.forEach((item) => {
-  item.addEventListener("click", () => {
-    window.location.href = "/price.html#styling";
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    forceNavigateToPrice('styling');
   });
 });
 
 // Окрашивания (используется только на титульной странице)
 colorationLink.forEach((item) => {
-  item.addEventListener("click", () => {
-    window.location.href = "/price.html#styling";
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    forceNavigateToPrice('styling');
   });
 });
 
-//
+// Услуги на главной странице
 const serviceItems = document.querySelectorAll(".service-item");
 
 serviceItems.forEach((item, index) => {
-  if (index === 0) {
-    item.addEventListener("click", () => {
-      window.location.href = "/price.html#hair";
-    });
-  } else if (index === 1) {
-    item.addEventListener("click", () => {
-      window.location.href = "/price.html#nail";
-    });
-  } else if (index === 2) {
-    item.addEventListener("click", () => {
-      window.location.href = "/price.html#styling";
+  const services = ['hair', 'nail', 'styling'];
+  const service = services[index];
+  
+  if (service) {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      forceNavigateToPrice(service);
     });
   }
 });

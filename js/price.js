@@ -3,21 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
    * 0. ФУНКЦИИ: работа с хэшами (hair, nail, brow, styling) и обновление меню
    *****************************************************************************/
   function checkHashAndOpenSection() {
-    const hash = window.location.hash.slice(1); // убираем "#"
+    const hash = window.location.hash.slice(1);
     if (!hash) return;
+
+    // Принудительный сброс состояния
+    activeTableId = null;
 
     switch (hash) {
       case "hair":
-        // П.1: «Парикмахерские» активны, показываем субменю,
-        // и выбираем «Женский зал» по умолчанию
         setActiveTopLevel("Парикмахерские");
-        showHairSubNav(true); // показать субменю
-        setSubNavActive("Женский"); // выбираем «Женский зал»
+        showHairSubNav(true);
+        setSubNavActive("Женский");
         loadContent("hair-women.html");
         break;
 
       case "styling":
-        // П.2: «Стайлинг» — тоже относится к женскому залу
         setActiveTopLevel("Парикмахерские");
         showHairSubNav(true);
         setSubNavActive("Женский");
@@ -25,20 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
 
       case "nail":
-        // П.3: «Ногтевой» — субменю не видно
         setActiveTopLevel("Ногтевой");
         showHairSubNav(false);
         loadContent("nail.html");
         break;
 
       case "brow":
-        // П.3: «Брови» — субменю не видно
         setActiveTopLevel("Брови");
         showHairSubNav(false);
         loadContent("brow.html");
-        break;
-
-      default:
         break;
     }
   }
@@ -271,46 +266,102 @@ document.addEventListener("DOMContentLoaded", () => {
   const priceBody = document.querySelector(".price-body");
   let isFadingOut = false;
   let nextURL = null;
-
   priceBody.addEventListener("transitionend", async (e) => {
     if (e.propertyName !== "opacity") return;
     if (isFadingOut && priceBody.style.opacity === "0") {
-      try {
-        const response = await fetch(nextURL);
-        if (!response.ok) {
-          throw new Error(`Ошибка загрузки файла: ${nextURL}`);
+      await loadContentDirectly();
+    }
+  });
+
+  function loadContent(url) {
+    // Проверяем, есть ли уже параметры в URL
+    const separator = url.includes("?") ? "&" : "?";
+    const urlWithCache = url + separator + "v=" + Date.now();
+
+    nextURL = urlWithCache;
+    isFadingOut = true;
+
+    // Принудительный сброс состояния модалок
+    activeTableId = null;
+
+    // Закрытие всех открытых модалок
+    const hairModal = document.getElementById("hairTypeModal");
+    const nailModal = document.getElementById("nailMasterModal");
+    if (hairModal) hairModal.style.display = "none";
+    if (nailModal) nailModal.style.display = "none";
+
+    // ИСПРАВЛЕНИЕ: Принудительно устанавливаем opacity в 1, затем в 0
+    priceBody.style.opacity = "1";
+
+    // Небольшая задержка для принудительного запуска анимации
+    setTimeout(() => {
+      priceBody.style.opacity = "0";
+
+      // ДОБАВЛЯЕМ: Резервный запуск загрузки если transitionend не сработает
+      setTimeout(() => {
+        if (isFadingOut && priceBody.style.opacity === "0") {
+          loadContentDirectly();
         }
-        const html = await response.text();
+      }, 500); // 500мс - достаточно для анимации
+    }, 10);
+  }
+
+  // ДОБАВЛЯЕМ: Функция прямой загрузки контента
+  async function loadContentDirectly() {
+    if (!nextURL || !isFadingOut) return;
+
+    try {
+      const response = await fetch(nextURL, {
+        method: "GET",
+        headers: {
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+          Pragma: "no-cache",
+          Expires: "0",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка загрузки файла: ${nextURL}`);
+      }
+
+      const html = await response.text();
+
+      // Полная очистка содержимого
+      priceBody.innerHTML = "";
+
+      // Вставляем новый контент
+      setTimeout(() => {
         priceBody.innerHTML = html;
 
-        // Если url содержит "#stylingScroll" — прокрутимся на 700px выше низа
+        // Сброс состояний
+        activeTableId = null;
+
+        // Если url содержит "#stylingScroll"
         if (nextURL.includes("#styling")) {
           scrollStyling(900);
         }
 
+        // Обновляем цены в таблицах
         Object.keys(tablesData).forEach((tableId) => {
           const tData = tablesData[tableId];
           updatePrices(tableId, tData.currentHairType);
         });
 
+        // Навешиваем обработчики
         attachPriceTableHandlers(priceBody);
         attachPriceQuestionHandlers(priceBody);
         attachSliderHandlers(priceBody);
         attachModalHandlers(priceBody);
-      } catch (error) {
-        console.error(error);
-        priceBody.innerHTML = `<p>Не удалось загрузить контент: ${nextURL}</p>`;
-      }
 
+        isFadingOut = false;
+        priceBody.style.opacity = "1";
+      }, 50);
+    } catch (error) {
+      console.error("Ошибка загрузки:", error);
+      priceBody.innerHTML = `<p style="color: red;">Не удалось загрузить контент: ${error.message}</p>`;
       isFadingOut = false;
       priceBody.style.opacity = "1";
     }
-  });
-
-  function loadContent(url) {
-    nextURL = url;
-    isFadingOut = true;
-    priceBody.style.opacity = "0";
   }
 
   // П.2: скролл «почти до низа», оставляя 700px
@@ -495,4 +546,10 @@ document.addEventListener("DOMContentLoaded", () => {
    *****************************************************************************/
   attachModalHandlers(document);
   checkHashAndOpenSection(); // читаем хэш (#hair / #nail / #brow / #styling) и открываем нужное
-});
+
+  /*****************************************************************************
+   * 8. ЭКСПОРТ ФУНКЦИИ ДЛЯ ВНЕШНЕГО ВЫЗОВА
+   *****************************************************************************/
+  // Делаем функцию доступной глобально для script.js
+  window.checkHashAndOpenSection = checkHashAndOpenSection;
+}); // конец DOMContentLoaded
