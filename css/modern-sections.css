@@ -788,6 +788,7 @@ img {
   background: #f8f9fa;
   border-radius: 12px;
   transition: background 0.3s ease;
+  width: stretch;
 }
 
 .salon-address:hover,
