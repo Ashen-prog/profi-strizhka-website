@@ -1,3 +1,14 @@
+@media screen and (min-width: 769px) {
+  .menu-home-link {
+    display: none !important;
+  }
+}
+.menu li:has(a[href="/"]) a::before,
+.menu li .menu-home-link::before {
+  content: "🏠";
+  margin-right: 12px;
+  font-size: 16px;
+}
 * {
   margin: 0;
   padding: 0;
