@@ -57,7 +57,9 @@ textarea:focus {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .reveal.reveal-visible {
@@ -1118,28 +1120,49 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 22px;
-    background: none;
+    width: 32px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     border: none;
+    border-radius: 8px;
     cursor: pointer;
-    padding: 0;
+    padding: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  .menu-toggle:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+  }
+
   .menu-toggle__line {
     width: 100%;
     height: 2px;
     background: #333;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .menu-toggle.active {
+    background: rgba(239, 68, 68, 0.95);
+  }
+
+  .menu-toggle.active .menu-toggle__line {
+    background: white;
   }
 
   .menu-toggle.active .menu-toggle__line:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(6px) rotate(45deg);
   }
   .menu-toggle.active .menu-toggle__line:nth-child(2) {
     opacity: 0;
+    transform: scale(0);
   }
   .menu-toggle.active .menu-toggle__line:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   /* Оверлей */
@@ -1149,10 +1172,11 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    backdrop-filter: blur(3px);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
   }
   .overlay.active {
@@ -1166,39 +1190,120 @@ footer {
     top: 0;
     right: 0;
     width: 80%;
-    max-width: 300px;
+    max-width: 350px;
     height: 100vh;
-    background: #fff;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
     transform: translateX(100%);
-    transition: transform 0.3s ease;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.2);
     z-index: 1002;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* Вместо align-items: center; можно использовать выравнивание по левому краю */
-    align-items: flex-start;
-    padding: 40px 20px; /* слева/справа чуть меньше, чтобы текст был не по центру */
-    background: #fafafa; /* слегка светло-серый фон для мягкого контраста */
+    align-items: stretch;
+    padding: 0;
+    overflow-y: auto;
   }
 
   .menu.active {
     transform: translateX(0);
   }
 
+  /* Простой header меню */
+  .menu::before {
+    content: "";
+    display: block;
+    height: 60px;
+    background: #ffffff;
+    border-bottom: 2px solid #f1f5f9;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  /* Лого в стиле сайта */
+  .menu::after {
+    content: "ПРОФИ Стрижка";
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #1f2937;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 1;
+  }
+
+  /* В мобильном сайдбаре скрываем выпадающий элемент и показываем только простую ссылку */
+  .menu .menu-btn-services {
+    display: none;
+  }
+
+  .menu .menu-btn-services_mobile {
+    display: block;
+  }
+
   .menu li {
-    font-size: 28px;
-    line-height: 1.5;
+    font-size: 17px;
+    line-height: 1.4;
     list-style: none;
     width: 100%;
-    padding: 15px 0;
-    border-bottom: 1px dashed #222;
-    color: #222;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    color: #1f2937;
     font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  /* Анимация появления пунктов меню */
+  .menu.active li {
+    animation: slideInFromRight 0.5s ease forwards;
+  }
+
+  .menu.active li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .menu.active li:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  .menu.active li:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .menu.active li:nth-child(4) {
+    animation-delay: 0.25s;
+  }
+  .menu.active li:nth-child(5) {
+    animation-delay: 0.3s;
+  }
+  .menu.active li:nth-child(6) {
+    animation-delay: 0.35s;
+  }
+  .menu.active li:nth-child(7) {
+    animation-delay: 0.4s;
+  }
+  .menu.active li:nth-child(8) {
+    animation-delay: 0.45s;
+  }
+
+  @keyframes slideInFromRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .menu li:hover {
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.08) 0%, transparent 100%);
+    transform: translateX(5px);
   }
 
   .menu li:first-child {
-    border-bottom: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
   .menu li:last-child {
     border-bottom: none;
@@ -1206,6 +1311,77 @@ footer {
 
   .menu li a {
     color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 18px 25px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  /* Иконки для пунктов меню */
+  .menu li.menu-btn-services_mobile a::before {
+    content: "💇";
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  .menu li:has(a[href="/salons.html"]) a::before {
+    content: "📍";
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  .menu li:has(a[href="/gallery.html"]) a::before {
+    content: "📷";
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  .menu li:has(a[href="/reviews.html"]) a::before {
+    content: "⭐";
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  .menu li:has(a[href="/blog.html"]) a::before {
+    content: "✍️";
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  .menu li:has(a[href="/certificate.html"]) a::before {
+    content: "🏅";
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  .menu li:has(a[href="/contacts.html"]) a::before {
+    content: "📧";
+    margin-right: 12px;
+    font-size: 16px;
+  }
+
+  /* Стрелочка справа */
+  .menu li a::after {
+    content: "→";
+    margin-left: auto;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .menu li:hover a::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .menu li a::before {
+    transition: all 0.3s ease;
+  }
+
+  .menu li:hover a::before {
+    transform: scale(1.2);
+  }
+
+  .menu li:hover a {
+    color: #ef4444;
+    padding-left: 30px;
   }
 
   /**/
@@ -1235,12 +1411,50 @@ footer {
     width: 380px;
     margin: auto;
   }
+
+  /* Адаптация меню для маленьких экранов */
+  .menu {
+    width: 85%;
+    max-width: 330px;
+  }
+
+  .menu li a {
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+
+  .menu-toggle {
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 22px;
+    padding: 6px;
+  }
 }
 
 @media screen and (max-width: 550px) {
   .content {
     width: 328px;
     margin: auto;
+  }
+
+  /* Дополнительная адаптация для очень маленьких экранов */
+  .menu {
+    width: 90%;
+    max-width: 310px;
+  }
+
+  .menu li a {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .menu-toggle {
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 20px;
+    padding: 5px;
   }
 }
 
@@ -1523,7 +1737,9 @@ footer {
     text-transform: uppercase;
     opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition:
+      opacity 1s ease-out,
+      transform 1s ease-out;
     will-change: opacity, transform;
   }
 
@@ -1540,7 +1756,9 @@ footer {
     display: inline-block;
     font-size: 30px;
     color: #9c9b9d;
-    transition: transform 0.3s ease-out, color 0.3s ease-out;
+    transition:
+      transform 0.3s ease-out,
+      color 0.3s ease-out;
     margin-left: auto;
   }
 
@@ -2061,7 +2279,9 @@ footer {
     text-transform: uppercase;
     opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition:
+      opacity 1s ease-out,
+      transform 1s ease-out;
     will-change: opacity, transform;
   }
 
@@ -2078,7 +2298,9 @@ footer {
     display: inline-block;
     font-size: 30px;
     color: #9c9b9d;
-    transition: transform 0.3s ease-out, color 0.3s ease-out;
+    transition:
+      transform 0.3s ease-out,
+      color 0.3s ease-out;
     margin-left: auto;
   }
 
@@ -2778,11 +3000,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.5)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
   z-index: 1;
 }
 
@@ -2817,7 +3035,9 @@ footer {
   position: relative;
   overflow: hidden;
   z-index: 2;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .main-btn:hover {
@@ -2888,7 +3108,9 @@ footer {
   background: #fff;
   border-radius: 15px;
   padding: 20px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   overflow: hidden;
   position: relative;
 }
@@ -2900,11 +3122,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom right,
-    rgba(237, 75, 88, 0.05),
-    rgba(255, 255, 255, 0.1)
-  );
+  background: linear-gradient(to bottom right, rgba(237, 75, 88, 0.05), rgba(255, 255, 255, 0.1));
   opacity: 0.8;
   z-index: 1;
 }
@@ -3044,7 +3262,9 @@ footer {
   border-radius: 10px;
   overflow: hidden;
   background: #fff;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -3103,7 +3323,9 @@ footer {
   border-radius: 10px;
   text-align: left;
   padding: 20px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
   border: 1px solid #ddd;
 }
@@ -3146,7 +3368,9 @@ footer {
   border-radius: 10px;
   text-align: left;
   padding: 20px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
   border: 1px solid #ddd;
 }
@@ -3189,7 +3413,9 @@ footer {
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   background: #fff;
   border: 1px solid #ddd;
 }
@@ -3798,7 +4024,9 @@ tbody tr td {
     opacity: 0;
     height: 0;
     overflow: hidden;
-    transition: opacity 0.3s ease, height 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      height 0.3s ease;
     border: none;
   }
 
@@ -4924,7 +5152,9 @@ tbody tr td {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.5s ease;
   font-size: 16px;
   line-height: 1.6;
   color: #666;
